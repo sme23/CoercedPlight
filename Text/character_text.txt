@@ -1,0 +1,37 @@
+## DominicName
+Dominic[X]
+
+## DominicDesc
+The young prince of Esnia.[N]
+Steadfast and headstrong.[X]
+
+## ElliotName
+Elliot[X]
+
+## ElliotDesc
+Esnia's official royal caretaker.[N]
+Wise and pious.[X]
+
+## TaylorName
+Taylor[X]
+
+## TaylorDesc
+Retainer to House Esnia.[N]
+Loyal and true.[X]
+
+## LydiaName
+Lydia[X]
+
+## LydiaDesc
+Retainer to House Esnia.[N]
+Strong and steadfast.[X]
+
+## RayName
+Ray[X]
+
+## RayDesc
+A spy in service to House Esnia.[N]
+Clever and cunning.[X]
+
+
+

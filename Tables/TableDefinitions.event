@@ -128,6 +128,20 @@
 #define LightAffinity 6
 #define AnimaAffinity 7
 
+//Generic minimugs
+#define MinimugDefault 0
+#define MinimugDragonRed 1
+#define MinimugSoldierGreen 2
+#define MinimugSoldierRed 3
+#define MinimugMonsterRed 4
+#define MinimugShieldGreen 5
+#define MinimugShieldRed 6
+#define MinimugMonsterBlue 7
+
+#define UseClassCardMug 0
+
+#define NoSupports 0
+
 #define negateByte(byte) "0x100-byte"
 #define IsPointer 0x8000000
 
@@ -172,6 +186,109 @@
 //for setting what status effect 
 //status staves will give 
 #define ItemStatus(StatusID,Duration) "StatusID | (Duration << 4)"
+
+
+#define NoEffectID 0
+#define HealEffectID 1
+#define MendEffectID 2
+#define RecoverEffectID 3
+#define PhysicEffectID 4
+#define FortifyEffectID 5
+#define RestoreEffectID 6
+#define SilenceEffectID 7
+#define SleepEffectID 8
+#define BerserkEffectID 9
+#define WarpEffectID 10
+#define RescueEffectID 11
+#define TorchEffectID 12
+#define HammerneEffectID 13
+#define UnlockEffectID 14
+#define BarrierEffectID 15
+#define AngelicRobeEffectID 16
+#define EnergyRingEffectID 17
+#define SecretBookEffectID 18
+#define SpeedwingsEffectID 19
+#define GoddessIconEffectID 20
+#define DragonshieldEffectID 21
+#define TalismanEffectID 22
+#define BootsEffectID 23
+#define BodyRingEffectID 24
+#define HeroCrestEffectID 25
+#define KnightCrestEffectID 26
+#define OrionsBoltEffectID 27
+#define ElysianWhipEffectID 28
+#define GuidingRingEffectID 29
+#define ChestKeyEffectID 30
+#define DoorKeyEffectID 31
+#define LockpickEffectID 32
+#define VulneraryEffectID 33
+#define ElixirEffectID 34
+#define PureWaterEffectID 35
+#define AntidoteEffectID 36
+#define TorchItemEffectID 37
+#define MasterKeyEffectID 38
+#define MineEffectID 39
+#define LightRuneEffectID 40
+#define FillasMightEffectID 41
+#define NinisGraceEffectID 42
+#define ThorsIreEffectID 43
+#define SetsLitanyEffectID 44
+#define MasterSealEffectID 45
+#define MetisTomeEffectID 46
+#define HeavenSealEffectID 47
+#define OceanSealEffectID 48
+#define LunarBraceEffectID 49
+#define SolarBraceEffectID 50
+#define Vulnerary2EffectID 51
+#define Vulnerary3EffectID 52
+#define Vulnerary4EffectID 53
+#define JunaFruitEffectID 54
+#define LatonaEffectID 55
+#define SkillScrollEffectID 56
+
+// chapter data related defs
+#define NoWeather 0
+#define SnowWeather 1
+#define BlizzardWeather 2
+#define RainWeather 3
+#define LavaWeather 4
+#define SandstormWeather 5
+#define CloudsWeather 6
+
+#define NormalBattleBGs 0
+#define SnowBattleBGs 1
+#define VolcanoBattleBGs 2
+#define FE7TownBattleBGs 3
+#define FE7FieldsBattleBGs 4
+#define Fort1BattleBGs 5
+#define Town1BattleBGs 6
+#define Town2BattleBGs 7
+#define ShipBattleBGs 8
+#define DesertBattleBGs 9
+#define Fort2BattleBGs 10
+#define ValniBattleBGs 11
+#define JehannaBattleBGs 12
+#define WoodsBattleBGs 13
+#define NightBattleBGs 14
+#define Castle1BattleBGs 15
+#define Castle2BattleBGs 16
+#define NightCastleBattleBGs 17
+#define MountainBattleBGs 18
+#define PortTownBattleBGs 19
+#define SwampBattleBGs 20
+
+//Chapter Objective definitions
+#define SurviveText 0x19C
+#define DefeatBossText 0x19D
+#define DefeatEnemyText 0x19E
+#define SeizeGateText 0x19F
+#define SeizeThroneText 0x1A1
+
+#define SeizeObjective 0
+#define RoutObjective 1
+#define DefendObjective 2
+#define DefeatBossObjective 3
+#define OtherObjective 4
 
 #endif
 
