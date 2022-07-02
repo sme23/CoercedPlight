@@ -1,7 +1,17 @@
 
 // char IDs
 
+#define Dominic 1
+#define Elliot 2
+#define Taylor 3
+#define Lydia 4
+#define Ray 5
 
 // mug IDs
 
+#define DominicMug 1
+#define ElliotMug 2
+#define TaylorMug 3
+#define LydiaMug 4
+#define RayMug 5
 

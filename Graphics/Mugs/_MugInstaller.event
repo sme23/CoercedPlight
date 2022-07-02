@@ -5,3 +5,27 @@ Portrait:			// by
 #incext PortraitFormatter ".png"
 */
 
+setMugEntry(DominicMug,DominicPortrait,3,5,3,3)
+ALIGN 4
+DominicPortrait:		// by Levin64
+#incext PortraitFormatter "Playables/Dominic.png"
+
+setMugEntry(ElliotMug,ElliotPortrait,2,5,3,3)
+ALIGN 4
+ElliotPortrait:			// by Smokeyguy77
+#incext PortraitFormatter "Playables/Elliot.png"
+
+setMugEntry(TaylorMug,TaylorPortrait,3,5,3,3)
+ALIGN 4
+TaylorPortrait:			// by LaurentLacroix
+#incext PortraitFormatter "Playables/Taylor.png"
+
+setMugEntry(LydiaMug,LydiaPortrait,3,6,3,4)
+ALIGN 4
+LydiaPortrait:			// by Sme
+#incext PortraitFormatter "Playables/Lydia.png"
+
+setMugEntry(RayMug,RayPortrait,2,6,3,4)
+ALIGN 4
+RayPortrait:			// by Sme
+#incext PortraitFormatter "Playables/Ray.png"
