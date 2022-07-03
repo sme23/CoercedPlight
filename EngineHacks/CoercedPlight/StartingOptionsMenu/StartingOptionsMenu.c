@@ -160,20 +160,36 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 		if (CurrentProc->CasualMode == 0) { 
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 3), 2, 0, 5, "Off"); 
 			UnsetEventId(CasualModeFlagLink);
+			if (CurrentProc->CursorIndex == 0) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Units die when they");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "fall in battle.");
+			}
 		}
 		else if (CurrentProc->CasualMode == 1) { 
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 3), 2, 0, 5, "On"); 
 			SetEventId(CasualModeFlagLink);
+			if (CurrentProc->CursorIndex == 0) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Units retreat when");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "they fall in battle.");
+			}
 		}
 		
 		
 		if (CurrentProc->FixedGrowths == 0) { 
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "Off"); 
 			UnsetEventId(FixedGrowthsFlagLink);
+			if (CurrentProc->CursorIndex == 1) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Random chance of gaining");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "stats on level ups.");
+			}
 		}
 		else if (CurrentProc->FixedGrowths == 1) { 
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "On"); 
 			SetEventId(FixedGrowthsFlagLink);
+			if (CurrentProc->CursorIndex == 1) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Guaranteed stat gains");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "on level ups.");
+			}
 		}
 		
 		switch (CurrentProc->RN) {
@@ -183,6 +199,14 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			UnsetEventId(OneRNFlagLink);
 			UnsetEventId(FatesRNFlagLink);
 			UnsetEventId(EvilRNFlagLink);
+			UnsetEventId(PerfectHitFlagLink);
+			UnsetEventId(NiceRNGFlagLink);
+			UnsetEventId(CoinTossRNGFlagLink);
+			if (CurrentProc->CursorIndex == 2) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Higher hit rates land");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "more often, while lower");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "hit rates land less often.");
+			}
 			break;
 			
 			case 1:
@@ -190,6 +214,14 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			SetEventId(OneRNFlagLink);
 			UnsetEventId(FatesRNFlagLink);
 			UnsetEventId(EvilRNFlagLink);
+			UnsetEventId(PerfectHitFlagLink);
+			UnsetEventId(NiceRNGFlagLink);
+			UnsetEventId(CoinTossRNGFlagLink);
+			if (CurrentProc->CursorIndex == 2) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Hit rate is exactly ");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "as displayed.");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "");
+			}
 			break;
 			
 			case 2:
@@ -197,6 +229,14 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			UnsetEventId(OneRNFlagLink);
 			SetEventId(FatesRNFlagLink);
 			UnsetEventId(EvilRNFlagLink);
+			UnsetEventId(PerfectHitFlagLink);
+			UnsetEventId(NiceRNGFlagLink);
+			UnsetEventId(CoinTossRNGFlagLink);
+			if (CurrentProc->CursorIndex == 2) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Lower hit rates are as");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "displayed, but higher");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "hit rates land more often.");
+				}
 			break;
 			
 			case 3:
@@ -204,7 +244,61 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			UnsetEventId(OneRNFlagLink);
 			UnsetEventId(FatesRNFlagLink);
 			SetEventId(EvilRNFlagLink);
+			UnsetEventId(PerfectHitFlagLink);
+			UnsetEventId(NiceRNGFlagLink);
+			UnsetEventId(CoinTossRNGFlagLink);
+			if (CurrentProc->CursorIndex == 2) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Higher hit rates land");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "less often, while lower");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "hit rates land more often.");
+				}
 			break;
+			
+			case 4:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Perfect Hit");
+			UnsetEventId(OneRNFlagLink);
+			UnsetEventId(FatesRNFlagLink);
+			UnsetEventId(EvilRNFlagLink);
+			SetEventId(PerfectHitFlagLink);
+			UnsetEventId(NiceRNGFlagLink);
+			UnsetEventId(CoinTossRNGFlagLink);
+			if (CurrentProc->CursorIndex == 2) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Hits always land if");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "hit rate is not 0.");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "");
+				}
+			break;
+			
+			case 5:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Nice Hit");
+			UnsetEventId(OneRNFlagLink);
+			UnsetEventId(FatesRNFlagLink);
+			UnsetEventId(EvilRNFlagLink);
+			UnsetEventId(PerfectHitFlagLink);
+			SetEventId(NiceRNGFlagLink);
+			UnsetEventId(CoinTossRNGFlagLink);
+			if (CurrentProc->CursorIndex == 2) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "True Hit, but");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "hit rates of 69");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "always land.");
+			}
+				break;
+			
+			case 6:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Coin Toss");
+			UnsetEventId(OneRNFlagLink);
+			UnsetEventId(FatesRNFlagLink);
+			UnsetEventId(EvilRNFlagLink);
+			UnsetEventId(PerfectHitFlagLink);
+			UnsetEventId(NiceRNGFlagLink);
+			SetEventId(CoinTossRNGFlagLink);
+			if (CurrentProc->CursorIndex == 2) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Always a 50/50 chance");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "of landing a hit.");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "");
+				}
+			break;
+			
 			
 			default:
 			break;
@@ -219,6 +313,10 @@ void StartingOptionsLoop(OptionsProc* CurrentProc){
 
 	//make snowflakes white
 	*(u32*) 0x5000262 = 0x739eFFFF; //fill in the only obj palette colour that matters lol
+	
+	
+	if (CurrentProc->CursorIndex != CurrentProc->LastCursorIndex) updateOptionsPage(CurrentProc);
+	CurrentProc->LastCursorIndex = CurrentProc->CursorIndex;
 	
 	// UpdateBG3HOffset();
 	UpdateHandCursor(CursorLocationTable[CurrentProc->CursorIndex].x, CursorLocationTable[CurrentProc->CursorIndex].y);	
@@ -255,12 +353,12 @@ void StartingOptionsLoop(OptionsProc* CurrentProc){
 	//RN
 	if (CurrentProc->CursorIndex == 2) {
 		if ((newInput & InputLeft) != 0) {
-			if (CurrentProc->RN == 0) CurrentProc->RN = 3;
+			if (CurrentProc->RN == 0) CurrentProc->RN = 6;
 			else CurrentProc->RN --;
 			updateOptionsPage(CurrentProc);
 		}
 		if ((newInput & InputRight) != 0) {
-			if (CurrentProc->RN == 3) CurrentProc->RN = 0;
+			if (CurrentProc->RN == 6) CurrentProc->RN = 0;
 			else CurrentProc->RN ++;
 			updateOptionsPage(CurrentProc);
 		}}

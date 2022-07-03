@@ -5,6 +5,7 @@ typedef struct {
   Proc Header;
   u8 Page;
   u8 CursorIndex;
+  u8 LastCursorIndex;
   u8 CasualMode;
   u8 FixedGrowths;
   u8 RN;
@@ -22,6 +23,9 @@ extern u8 FatesRNFlagLink;
 extern u8 CasualModeFlagLink;
 extern u8 FixedGrowthsFlagLink;
 extern u8 EvilRNFlagLink;
+extern u8 PerfectHitFlagLink;
+extern u8 NiceRNGFlagLink;
+extern u8 CoinTossRNGFlagLink;
 
 extern int SpinRoutine1;
 extern int SpinRoutine2;

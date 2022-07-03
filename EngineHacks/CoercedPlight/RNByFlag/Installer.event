@@ -3,6 +3,9 @@
 #define Enable1RNFlag 0xB1
 #define EnableFatesRNFlag 0xB2
 #define EnableEvilRNFlag 0xB3
+#define EnablePerfectHitFlag 0xB4
+#define EnableNiceRNGFlag 0xB5
+#define EnableCoinTossRNGFlag 0xB6
 
 
 PUSH
@@ -27,4 +30,9 @@ EnableFatesRNFlagLink:
 BYTE EnableFatesRNFlag
 EnableEvilRNFlagLink:
 BYTE EnableEvilRNFlag
-
+EnablePerfectHitFlagLink:
+BYTE EnablePerfectHitFlag
+EnableNiceRNGFlagLink:
+BYTE EnableNiceRNGFlag
+EnableCoinTossRNGFlagLink:
+BYTE EnableCoinTossRNGFlag

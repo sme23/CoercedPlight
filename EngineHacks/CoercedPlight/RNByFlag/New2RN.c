@@ -3,6 +3,10 @@
 
 extern u8 Enable1RNFlagLink;
 extern u8 EnableFatesRNFlagLink;
+extern u8 EnableEvilRNFlagLink;
+extern u8 EnableNiceRNGFlagLink;
+extern u8 EnableCoinTossRNGFlagLink;
+extern u8 EnablePerfectHitFlagLink;
 
 extern bool CheckEventId(int flagID);
 
@@ -15,6 +19,9 @@ int NewRoll2RN(int threshold) {
 	if (CheckEventId(Enable1RNFlagLink)) return Roll1RN(threshold);
 	if (CheckEventId(EnableFatesRNFlagLink)) return RollFatesRN(threshold);
 	if (CheckEventId(EnableEvilRNFlagLink)) return RollEvilRN(threshold);
+	if (CheckEventId(EnableNiceRNGFlagLink) && threshold == 69) return true;
+	if (CheckEventId(EnableCoinTossRNGFlagLink)) threshold = 50;
+	if (CheckEventId(EnablePerfectHitFlagLink)) { if (threshold != 0) return true; return false; }
 		
 	int average = (NextRN_100() + NextRN_100()) / 2;
 
@@ -40,3 +47,6 @@ int RollEvilRN(int threshold) {
 	return (threshold*100 > average);
 	
 }
+
+
+

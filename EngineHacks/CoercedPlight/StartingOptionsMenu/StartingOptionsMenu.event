@@ -18,3 +18,11 @@ FatesRNFlagLink:
 BYTE EnableFatesRNFlag
 EvilRNFlagLink:
 BYTE EnableEvilRNFlag
+PerfectHitFlagLink:
+BYTE EnablePerfectHitFlag
+NiceRNGFlagLink:
+BYTE EnableNiceRNGFlag
+CoinTossRNGFlagLink:
+BYTE EnableCoinTossRNGFlag
+
+
