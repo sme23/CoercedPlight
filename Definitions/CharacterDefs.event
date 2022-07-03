@@ -15,3 +15,5 @@
 #define LydiaMug 4
 #define RayMug 5
 
+#define KingMug 20
+

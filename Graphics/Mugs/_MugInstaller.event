@@ -29,3 +29,8 @@ setMugEntry(RayMug,RayPortrait,2,6,3,4)
 ALIGN 4
 RayPortrait:			// by Sme
 #incext PortraitFormatter "Playables/Ray.png"
+
+setMugEntry(KingMug,KingPortrait,3,5,3,3)
+ALIGN 4
+KingPortrait:			// by LaurentLacroix (recolored)
+#incext PortraitFormatter "Enemies/King.png"

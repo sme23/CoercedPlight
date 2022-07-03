@@ -1,0 +1,11 @@
+## EscapeText
+Escape[X]
+
+## ArriveText
+Arrive[X]
+
+## SearchText
+Search[X]
+
+## Ch1StatusObjectiveText
+Find the hidden temple.[X]

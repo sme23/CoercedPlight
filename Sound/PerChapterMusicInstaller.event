@@ -28,9 +28,8 @@
 
 
 
-
-
-
+SetChapterMapThemes(Ch1ID,DesertFieldDV,DesertFieldDV,DesertFieldDV)
+SetVictoryTheme(Ch1ID,DesertFieldDV)
 
 
 // ===== Battle Music =====
@@ -46,7 +45,7 @@
 
 
 
-
+SetChapterBattleThemes(Ch1ID,BattlePQ,BattlePQ,BattlePQ) 
 
 
 

@@ -1,0 +1,177 @@
+EventPointerTable(Ch1EventsID, PointerList)
+
+PointerList:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno1 Dunno2 Dunno3 Tutorial
+POIN Traps1 Traps2
+POIN Units1 Units1  //This unit group determines the number and position of deployment slots when there is a prep screen
+POIN $0 $0 $0
+POIN $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+END_MAIN
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno1:
+END_MAIN
+
+Dunno2:
+END_MAIN
+
+Dunno3:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+Units1:
+UNIT Dominic Lord 0 Level(1,Ally,0) [9,25] 0 0 1 REDA9R23 [Reginleif] NoAI
+UNIT Elliot Bishop 0 Level(1,Ally,0) [9,25] 0 0 1 REDA8R24 [Divine,Heal] NoAI
+UNIT Taylor Cavalier_F 0 Level(3,Ally,0) [8,25] 0 0 1 REDA8R23 [IronLance] NoAI
+UNIT Lydia Cavalier_F 0 Level(3,Ally,0) [10,25] 0 0 1 REDA10R23 [IronSword] NoAI
+UNIT Ray Thief 0 Level(3,Ally,0) [11,25] 0 0 1 REDA10R24 [IronSword] NoAI
+UNIT
+
+EnemyUnits:
+UNIT
+
+OpeningNPCUnits:
+UNIT 0x80 Peer 0 Level(1,NPC,0) [9,5] 0 0 0 1 NoItems NoAI
+UNIT 0x81 Soldier 0 Level(1,NPC,0) [7,11] 0 0 0 1 NoItems NoAI
+UNIT 0x81 Soldier 0 Level(1,NPC,0) [11,11] 0 0 0 1 NoItems NoAI
+UNIT 0x81 Soldier 0 Level(1,NPC,0) [7,23] 0 0 0 1 NoItems NoAI
+UNIT 0x81 Soldier 0 Level(1,NPC,0) [11,23] 0 0 0 1 NoItems NoAI
+UNIT 0x81 Soldier 0 Level(1,NPC,0) [1,11] 0 0 0 1 NoItems NoAI
+UNIT 0x81 Soldier 0 Level(1,NPC,0) [17,11] 0 0 0 1 NoItems NoAI
+UNIT 0x81 Soldier 0 Level(1,NPC,0) [1,1] 0 0 0 1 NoItems NoAI
+UNIT 0x81 Soldier 0 Level(1,NPC,0) [17,1] 0 0 0 1 NoItems NoAI
+UNIT 0x81 Soldier 0 Level(1,NPC,0) [6,5] 0 0 0 1 NoItems NoAI
+UNIT 0x81 Soldier 0 Level(1,NPC,0) [12,5] 0 0 0 1 NoItems NoAI
+UNIT
+
+Traps1:
+ENDTRAP
+ALIGN 4
+
+Traps2:
+ENDTRAP
+ALIGN 4
+
+BeginningScene:
+
+LOAD1 0 OpeningNPCUnits
+ENUN
+CAM1 [9,24]
+MUSC Field2Herc4
+
+FADU 10
+
+LOAD1 0 Units1
+ENUN
+
+SetBackground(Castle_Outside)
+Text(Ch1OpeningText1)
+EndConvo
+
+EVBIT_T 9
+
+SVAL sB Coords(7,23)
+MOVE 0 (-2) [4,12]
+SVAL sB Coords(11,23)
+MOVE 0 (-2) [6,12]
+MOVE 0 Dominic [5,12]
+ENUN
+EVBIT_F 9
+
+
+MOVE 0 Elliot [5,11]
+MOVE 0 Taylor [4,11]
+MOVE 0 Lydia [6,11]
+MOVE 0 Ray [3,11]
+ENUN
+
+SOUN 0xB1 //unlock door sfx
+TILECHANGE 8 //open left room outer door
+
+SetBackground(Castle_Hall)
+Text(Ch1OpeningText2)
+EndConvo
+
+SVAL sB Coords(4,12)
+MOVE 0 (-2) [7,23]
+SVAL sB Coords(6,12)
+MOVE 0 (-2) [11,23]
+ENUN
+
+MOVE 0 Dominic [5,16]
+MOVE 0 Elliot [5,15]
+MOVE 0 Taylor [4,14]
+MOVE 0 Lydia [6,14]
+MOVE 0 Ray [4,15]
+ENUN
+
+SOUN 0xB1 //unlock door sfx
+TILEREVERT 8 //close left room outer door
+
+CAM1 Dominic
+
+SetBackground(Castle_Room)
+Text(Ch1OpeningText3)
+EndConvo
+
+SOUN 0xB1 //unlock door sfx
+TILECHANGE 6 //open left room inner door
+MOVE 0 Ray [2,15]
+ENUN
+SOUN 0xB1 //unlock door sfx
+TILEREVERT 6 //close left room inner door
+
+STAL 20
+
+TILECHANGE 10 //open main throne room door
+SVAL sB Coords(7,11)
+MOVE 0 (-2) [5,12]
+SOUN 0xB1 //unlock door sfx
+TILECHANGE 8 //open left room outer door
+
+EVBIT_T 9
+
+Text(Ch1OpeningText4)
+
+SVAL sB Coords(5,12)
+MOVE 0 (-2) [8,9]
+MOVE 0 Dominic [9,9]
+ENUN
+EVBIT_F 9
+CAM1 [9,8]
+
+SVAL sB Coords(8,9)
+MOVE 0 (-2) [7,11]
+ENUN
+
+CURSOR_FLASHING [9,5]
+STAL 20
+REMOVE_CURSORS
+
+Text(Ch1OpeningText5)
+
+NoFade
+ENDA
+
+EndingScene:
+NoFade
+ENDA
+

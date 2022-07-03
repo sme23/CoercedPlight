@@ -283,6 +283,10 @@
 #define DefeatEnemyText 0x19E
 #define SeizeGateText 0x19F
 #define SeizeThroneText 0x1A1
+// also defined:
+// - EscapeText
+// - ArriveText
+// - SearchText
 
 #define SeizeObjective 0
 #define RoutObjective 1
