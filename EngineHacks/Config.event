@@ -41,7 +41,7 @@
 #define CASUAL_MODE
 
 //If uncommented, will enable Contemporary Talk & Support.
-#define CONTEMPORARY_TALK_SUPPORT
+// #define CONTEMPORARY_TALK_SUPPORT
 
 //If uncommented, will enable Danger Zone.
 //#define DANGER_ZONE
@@ -74,7 +74,7 @@
 //#define FREEZE_HACK
 
 //If uncommented, will enable HP Bars.
-//#define HP_BARS
+#define HP_BARS
 
 //If uncommented, will enable Improved Sound Mixer.
 #define IMPROVED_SOUND_MIXER

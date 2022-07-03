@@ -116,6 +116,23 @@ Cost[X]
 A scroll that teaches[N]
 a skill when used.[X]
 
+## TM_KingdomStateText
+ Talk about the state of his kingdom[X]
+
+## TM_ForeignRelationsText
+ Talk about foreign relations[X]
+
+## TM_TradeDisputeText
+ Talk about trade disputes[X]
+
+## TM_WeatherText
+ Talk about the weather[X]
+ 
+## TM_ComplimentText
+ Compliment him[X]
+ 
+ 
+
 #include "skilldesc_text.txt"
 
 #include "unitinfo_text.txt"

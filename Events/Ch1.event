@@ -1,5 +1,28 @@
 EventPointerTable(Ch1EventsID, PointerList)
 
+#define F_KingTalkEvent 7
+#define F_Option1Selected 8
+#define F_Option2Selected 9
+#define F_Option3Selected 10
+#define F_Option4Selected 11
+#define F_Option5Selected 12
+#define F_OptionOverride 13
+#define F_SoldierTalkEvent 14
+
+#define L_Option1 1
+#define L_Option2 2
+#define L_Option3 3
+#define L_Option4 4
+#define L_Option5 5
+#define L_OptionFlagCheck 6
+#define L_OptionFlagCheckOverride 7
+#define L_OptionEnd 8
+#define L_Option1_sub 9
+#define L_Option2_sub 10
+#define L_Option3_sub 11
+#define L_Option4_sub 12
+#define L_Option5_sub 13
+
 PointerList:
 POIN TurnBasedEvents
 POIN CharacterBasedEvents
@@ -16,9 +39,35 @@ TurnBasedEvents:
 END_MAIN
 
 CharacterBasedEvents:
+CharacterEvent(F_KingTalkEvent,KingTalkEvent,Dominic,Rombus)
+CharacterEvent(F_SoldierTalkEvent,SoldierTalkEvent1,Taylor,UdreinUnique)
+CharacterEvent(F_SoldierTalkEvent,SoldierTalkEvent2,Lydia,UdreinUnique)
 END_MAIN
 
 LocationBasedEvents:
+Door(5,4)
+Door(13,4)
+Door(2,7)
+Door(16,7)
+Door(8,10)
+Door(9,10)
+Door(10,10)
+Door(0,10)
+Door(1,10)
+Door(17,10)
+Door(18,10)
+Door(3,15)
+Door(5,13)
+Door(13,13)
+Door(15,15)
+Door(3,16)
+Door(15,16)
+Chest(Elixir,4,8)
+Chest(Javelin,14,8)
+Arrive(2,0)
+Arrive(2,1)
+Arrive(16,0)
+Arrive(16,1)
 END_MAIN
 
 MiscBasedEvents:
@@ -49,20 +98,24 @@ EnemyUnits:
 UNIT
 
 OpeningNPCUnits:
-UNIT 0x80 Peer 0 Level(1,NPC,0) [9,5] 0 0 0 1 NoItems NoAI
-UNIT 0x81 Soldier 0 Level(1,NPC,0) [7,11] 0 0 0 1 NoItems NoAI
-UNIT 0x81 Soldier 0 Level(1,NPC,0) [11,11] 0 0 0 1 NoItems NoAI
-UNIT 0x81 Soldier 0 Level(1,NPC,0) [7,23] 0 0 0 1 NoItems NoAI
-UNIT 0x81 Soldier 0 Level(1,NPC,0) [11,23] 0 0 0 1 NoItems NoAI
-UNIT 0x81 Soldier 0 Level(1,NPC,0) [1,11] 0 0 0 1 NoItems NoAI
-UNIT 0x81 Soldier 0 Level(1,NPC,0) [17,11] 0 0 0 1 NoItems NoAI
-UNIT 0x81 Soldier 0 Level(1,NPC,0) [1,1] 0 0 0 1 NoItems NoAI
-UNIT 0x81 Soldier 0 Level(1,NPC,0) [17,1] 0 0 0 1 NoItems NoAI
-UNIT 0x81 Soldier 0 Level(1,NPC,0) [6,5] 0 0 0 1 NoItems NoAI
-UNIT 0x81 Soldier 0 Level(1,NPC,0) [12,5] 0 0 0 1 NoItems NoAI
+UNIT Rombus Peer 0 Level(1,NPC,0) [9,5] 0 0 0 1 NoItems NeverMoveAI
+UNIT Udrein Soldier 0 Level(1,NPC,0) [7,11] 0 0 0 1 [IronLance] NeverMoveAI
+UNIT Udrein Soldier 0 Level(1,NPC,0) [11,11] 0 0 0 1 [IronLance] NeverMoveAI
+UNIT Udrein Soldier 0 Level(1,NPC,0) [7,23] 0 0 0 1 [IronLance] NeverMoveAI
+UNIT Udrein Soldier 0 Level(1,NPC,0) [11,23] 0 0 0 1 [IronLance] NeverMoveAI
+UNIT UdreinUnique Soldier 0 Level(1,NPC,0) [1,11] 0 0 0 1 [IronLance] NeverMoveAI
+UNIT Udrein Soldier 0 Level(1,NPC,0) [17,11] 0 0 0 1 [IronLance] NeverMoveAI
+UNIT Udrein Soldier 0 Level(1,NPC,0) [1,1] 0 0 0 1 [IronLance] AttackInRangeAI
+UNIT Udrein Soldier 0 Level(1,NPC,0) [17,1] 0 0 0 1 [IronLance] AttackInRangeAI
+UNIT Udrein Soldier 0 Level(1,NPC,0) [6,5] 0 0 0 1 [IronLance] NeverMoveAI
+UNIT Udrein Soldier 0 Level(1,NPC,0) [12,5] 0 0 0 1 [IronLance] NeverMoveAI
 UNIT
 
 Traps1:
+MapSpriteTrap(GreenSigilTrapID,2,0)
+MapSpriteTrap(GreenSigilTrapID,2,1)
+MapSpriteTrap(GreenSigilTrapID,16,0)
+MapSpriteTrap(GreenSigilTrapID,16,1)
 ENDTRAP
 ALIGN 4
 
@@ -175,3 +228,153 @@ EndingScene:
 NoFade
 ENDA
 
+KingTalkEvent:
+ENUF F_KingTalkEvent
+
+SVAL s1 Ch1KingTalkMenu|IsPointer
+ASMC CallEventMenuASMC
+
+BEQ L_Option1 s0 sC
+SVAL s1 1
+BEQ L_Option2 s1 sC
+SVAL s1 2
+BEQ L_Option3 s1 sC
+SVAL s1 3
+BEQ L_Option4 s1 sC
+SVAL s1 4
+BEQ L_Option5 s1 sC
+GOTO L_OptionFlagCheck
+
+LABEL L_Option1
+CHECK_FLAG F_Option1Selected
+BEQ L_Option1_sub s0 sC
+
+Text(Ch1Talk_Repeat)
+ENUT F_OptionOverride
+GOTO L_OptionFlagCheck
+
+LABEL L_Option1_sub
+Text(Ch1Talk_KingdomState)
+ENUT F_Option1Selected
+GOTO L_OptionFlagCheck
+
+LABEL L_Option2
+CHECK_FLAG F_Option2Selected
+BEQ L_Option2_sub s0 sC
+
+Text(Ch1Talk_Repeat)
+ENUT F_OptionOverride
+GOTO L_OptionFlagCheck
+
+LABEL L_Option2_sub
+
+Text(Ch1Talk_ForeignRelations)
+ENUT F_Option2Selected
+GOTO L_OptionFlagCheck
+
+LABEL L_Option3
+CHECK_FLAG F_Option3Selected
+BEQ L_Option3_sub s0 sC
+
+Text(Ch1Talk_Repeat)
+ENUT F_OptionOverride
+GOTO L_OptionFlagCheck
+
+LABEL L_Option3_sub
+
+Text(Ch1Talk_TradeDispute)
+ENUT F_Option3Selected
+GOTO L_OptionFlagCheck
+
+LABEL L_Option4
+CHECK_FLAG F_Option4Selected
+BEQ L_Option4_sub s0 sC
+
+Text(Ch1Talk_Repeat)
+ENUT F_OptionOverride
+GOTO L_OptionFlagCheck
+
+LABEL L_Option4_sub
+
+Text(Ch1Talk_Weather)
+ENUT F_Option4Selected
+GOTO L_OptionFlagCheck
+
+LABEL L_Option5
+CHECK_FLAG F_Option5Selected
+BEQ L_Option5_sub s0 sC
+
+Text(Ch1Talk_Repeat)
+ENUT F_OptionOverride
+GOTO L_OptionFlagCheck
+
+LABEL L_Option5_sub
+
+Text(Ch1Talk_Compliment)
+ENUT F_Option5Selected
+GOTO L_OptionFlagCheck
+
+LABEL L_OptionFlagCheck
+CHECK_FLAG F_OptionOverride
+BNE L_OptionFlagCheckOverride s0 sC
+
+CHECK_FLAG F_Option1Selected
+BEQ L_OptionEnd s0 sC
+CHECK_FLAG F_Option2Selected
+BEQ L_OptionEnd s0 sC
+CHECK_FLAG F_Option3Selected
+BEQ L_OptionEnd s0 sC
+CHECK_FLAG F_Option4Selected
+BEQ L_OptionEnd s0 sC
+CHECK_FLAG F_Option5Selected
+BEQ L_OptionEnd s0 sC
+
+LABEL L_OptionFlagCheckOverride
+
+ENUT 7
+Text(Ch1Talk_Conclusion)
+
+SET_ACTIVE Rombus
+MOVE 0 Dominic [9,11]
+ENUN
+SET_ACTIVE Dominic
+
+TILEREVERT 10 //close throne room door
+
+Text(Ch1Talk_Conclusion2)
+
+SVAL sB Coords(1,1)
+CUSE (-2)
+SVAL sB Coords(17,1)
+CUSE (-2)
+
+LABEL L_OptionEnd
+
+NoFade
+ENDA
+
+SoldierTalkEvent1:
+
+Text(Ch1Talk_Bathroom)
+
+SET_ACTIVE Rombus
+MOVE 0 UdreinUnique [14,12]
+MOVE 0 Taylor [13,12]
+ENUN
+SET_ACTIVE Taylor
+
+NoFade
+ENDA
+
+SoldierTalkEvent2:
+
+Text(Ch1Talk_Bathroom)
+
+SET_ACTIVE Rombus
+MOVE 0 UdreinUnique [14,12]
+MOVE 0 Lydia [13,12]
+ENUN
+SET_ACTIVE Lydia
+
+NoFade
+ENDA

@@ -199,6 +199,8 @@ POP
 	#include "ExternalHacks/AoE/Installer.event"
   #endif 
   
+  #include "CoercedPlight/_SmeHaxInstaller.event"
+  
   // Unlock working on chests
   #include "ExternalHacks/UnlockChest/UnlockChest.event"
   

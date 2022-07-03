@@ -52,4 +52,4 @@
 #include "Definitions/_MasterDefinitionInstaller.event"
 
 #include "Sound/_SoundDefinitions.event"
-
+#include "Graphics/MapSprites/_MapSpriteDefs.event"

@@ -68,3 +68,92 @@ Please, follow me.[A][X]
 Well, if it isn't young Dominic.[A][N]
 What can I do for you today?[A][X]
 
+
+## Ch1Talk_Repeat
+[OpenMidRight][LoadDominic]
+[OpenMidLeft][LoadKing]
+Come now, we've already discussed this.[A][X]
+
+
+## Ch1Talk_KingdomState
+[OpenMidLeft][LoadKing]
+[OpenMidRight][LoadDominic]
+So, how fares your kingdom these days?[A]
+[OpenMidLeft]
+Quite prosperous![A][N]
+We have had a bumper crop this year,[N]
+and are quite set through the winter[A][N]
+with enough to spare[N]
+for significant trade.[A][X]
+
+## Ch1Talk_ForeignRelations
+[OpenMidLeft][LoadKing]
+[OpenMidRight][LoadDominic]
+As you know, the relationship[N]
+between our two countries[A][N]
+has historically been quite strong.[A]
+[OpenMidLeft]
+Yes, I do know. Is there something[N]
+you'd like to say about it?[A]
+[OpenMidRight]
+P-perhaps not[Beat][A][X]
+
+## Ch1Talk_TradeDispute
+[OpenMidLeft][LoadKing]
+[OpenMidRight][LoadDominic]
+There have recently been disputes[N]
+over the taxation of trade routes[A][N]
+between our two kingdoms.[A]
+[OpenMidLeft]
+Yes, I'm quite aware of that.[A][N]
+If that is what this visit is about,[A]
+I currently have negotiators[N]
+on their way to your kingdom.[A][N]
+They will resolve this[N]
+issue in my stead.[A][X]
+
+## Ch1Talk_Weather
+[OpenMidLeft][LoadKing]
+[OpenMidRight][LoadDominic]
+So[Beat] how's the[N]
+weather been lately?[A]
+[OpenMidLeft]
+[Beat][A][X]
+
+## Ch1Talk_Compliment
+[OpenMidLeft][LoadKing]
+[OpenMidRight][LoadDominic]
+Is that a new cape?[N]
+Its royal red looks[N]
+quite dashing![A]
+[OpenMidLeft]
+[Beat][A][X]
+
+## Ch1Talk_Conclusion
+[OpenMidRight][LoadDominic]
+[OpenMidLeft][LoadKing]
+Well, I suppose that's quite[N]
+enough discussion for today.[A][N]
+If you do not have a more[N]
+pressing matter to discuss,[A][N]
+you should be on your way.[A][N]
+I am a very busy man, after all.[A][X]
+
+## Ch1Talk_Conclusion2
+[OpenMidLeft][LoadGreenSoldier]
+[OpenMidRight][LoadKing]
+This visit was not random.[A][N]
+Secure the "event area",[A][N]
+and keep an eye out for[N]
+any suspicious individuals.[A]
+[OpenMidLeft]
+Sir![A][X]
+
+## Ch1Talk_Bathroom
+[OpenMidLeft][LoadGreenSoldier]
+[OpenMidRight][LoadCurrent]
+Sorry to bother, but can you[N]
+show me to a bathroom, please?[A]
+[OpenMidLeft]
+Of course! Follow me.[A][X]
+

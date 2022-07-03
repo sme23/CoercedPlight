@@ -7,6 +7,11 @@
 #define Lydia 4
 #define Ray 5
 
+#define Rombus 64
+
+#define Udrein 96
+#define UdreinUnique 97
+
 // mug IDs
 
 #define DominicMug 1

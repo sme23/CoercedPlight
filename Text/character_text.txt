@@ -35,3 +35,16 @@ Clever and cunning.[X]
 
 
 
+
+## RombusName
+Rombus[X]
+
+## RombusDesc
+King of Udrein.[N]
+Reserved.[X]
+
+## UdreinName
+Udrein[X]
+
+## UdreinDesc
+A soldier in service to Udrein.[X]
