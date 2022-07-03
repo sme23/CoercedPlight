@@ -8,6 +8,9 @@ EventPointerTable(Ch1EventsID, PointerList)
 #define F_Option5Selected 12
 #define F_OptionOverride 13
 #define F_SoldierTalkEvent 14
+#define F_LeftArea 15
+#define F_RightArea 16
+#define F_TalkedThisTurn 17
 
 #define L_Option1 1
 #define L_Option2 2
@@ -36,6 +39,8 @@ POIN $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
+TurnEventPlayer(0,DisableFlagEvent,1,255)
+TurnEventEnemy(F_TalkedThisTurn,HaventTalkedEvent,1,255)
 END_MAIN
 
 CharacterBasedEvents:
@@ -71,6 +76,8 @@ Arrive(16,1)
 END_MAIN
 
 MiscBasedEvents:
+AREA F_LeftArea LeftAreaEvent [0,0] [1,10]
+AREA F_RightArea RightAreaEvent [17,0] [18,10]
 CauseGameOverIfLordDies
 END_MAIN
 
@@ -215,6 +222,8 @@ SVAL sB Coords(8,9)
 MOVE 0 (-2) [7,11]
 ENUN
 
+TILEREVERT 10
+
 CURSOR_FLASHING [9,5]
 STAL 20
 REMOVE_CURSORS
@@ -230,6 +239,7 @@ ENDA
 
 KingTalkEvent:
 ENUF F_KingTalkEvent
+ENUT F_TalkedThisTurn
 
 SVAL s1 Ch1KingTalkMenu|IsPointer
 ASMC CallEventMenuASMC
@@ -334,6 +344,8 @@ LABEL L_OptionFlagCheckOverride
 ENUT 7
 Text(Ch1Talk_Conclusion)
 
+TILECHANGE 10
+
 SET_ACTIVE Rombus
 MOVE 0 Dominic [9,11]
 ENUN
@@ -378,3 +390,51 @@ SET_ACTIVE Lydia
 
 NoFade
 ENDA
+
+LeftAreaEvent:
+
+Text(Ch1ScoldText)
+SVAL sB Coords(1,1)
+CUSE (-2)
+
+NoFade
+ENDA
+
+RightAreaEvent:
+
+Text(Ch1ScoldText)
+SVAL sB Coords(17,1)
+CUSE (-2)
+
+NoFade
+ENDA
+
+DisableFlagEvent:
+ENUF F_TalkedThisTurn
+NoFade
+ENDA
+
+
+HaventTalkedEvent:
+ENUT 7
+Text(Ch1Talk_Conclusion)
+
+TILECHANGE 10
+
+SET_ACTIVE Rombus
+MOVE 0 Dominic [9,11]
+ENUN
+SET_ACTIVE Dominic
+
+TILEREVERT 10 //close throne room door
+
+Text(Ch1Talk_Conclusion2)
+
+SVAL sB Coords(1,1)
+CUSE (-2)
+SVAL sB Coords(17,1)
+CUSE (-2)
+
+NoFade
+ENDA
+
