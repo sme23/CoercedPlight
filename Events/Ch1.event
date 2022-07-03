@@ -234,8 +234,34 @@ NoFade
 ENDA
 
 EndingScene:
+Text(Ch1EndingText1)
+
+FADI 10
+MUSC Into_the_Shadow_of_Victory
+REMOVEALL_BLUE
+REMOVEALL_RED
+REMOVEALL_GREEN
+LOAD1 1 EndingCutsceneUnits
+ENUN
+CAM1 Dominic
+FADU 10
+
+Text(Ch1EndingText2)
+
+MNC2 Ch2ID
+
 NoFade
 ENDA
+
+EndingCutsceneUnits:
+UNIT Dominic Lord 0 Level(0,Ally,0) [1,0] 0 0 0 1 NoItems NoAI
+UNIT Elliot Bishop 0 Level(0,Ally,0) [0,0] 0 0 0 1 NoItems NoAI
+UNIT Taylor Cavalier_F 0 Level(0,Ally,0) [0,1] 0 0 0 1 NoItems NoAI
+UNIT Lydia Cavalier_F 0 Level(0,Ally,0) [0,2] 0 0 0 1 NoItems NoAI
+UNIT Ray Thief 0 Level(0,Ally,0) [1,1] 0 0 0 1 NoItems NoAI
+UNIT
+
+
 
 KingTalkEvent:
 ENUF F_KingTalkEvent

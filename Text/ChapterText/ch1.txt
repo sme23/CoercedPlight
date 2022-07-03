@@ -161,3 +161,23 @@ Of course! Follow me.[A][X]
 [OpenMidLeft][LoadGreenSoldier]
 Hey, you're not supposed[N]
 to be in here![A][X]
+
+## Ch1EndingText1
+[OpenMidLeft][LoadCurrent]
+Looks like this is the way forward.[N]
+Best to call everyone else over.[A][X]
+
+## Ch1EndingText2
+[OpenFarLeft][LoadLydia]
+[OpenLeft][LoadElliot]
+[OpenMidRight][LoadDominic]
+Looks like both staircases[N]
+lead to the same place.[A][N]
+[OpenLeft]
+I can feel an ominous[N]
+presence ahead[Beat][A][N]
+Please, do be careful.[A]
+[OpenMidRight]
+Of course.[A][N]
+Let's go.[A][X]
+
