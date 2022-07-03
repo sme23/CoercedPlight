@@ -360,6 +360,9 @@ CUSE (-2)
 SVAL sB Coords(17,1)
 CUSE (-2)
 
+ENUT F_LeftArea
+ENUT F_RightArea
+
 LABEL L_OptionEnd
 
 NoFade
@@ -434,6 +437,9 @@ SVAL sB Coords(1,1)
 CUSE (-2)
 SVAL sB Coords(17,1)
 CUSE (-2)
+
+ENUT F_LeftArea
+ENUT F_RightArea
 
 NoFade
 ENDA

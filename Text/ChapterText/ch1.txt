@@ -157,3 +157,7 @@ show me to a bathroom, please?[A]
 [OpenMidLeft]
 Of course! Follow me.[A][X]
 
+## Ch1ScoldText
+[OpenMidLeft][LoadGreenSoldier]
+Hey, you're not supposed[N]
+to be in here![A][X]
