@@ -5,3 +5,7 @@
 #include "Ch1.event"
 }
 
+{
+#include "Ch2.event"
+}
+

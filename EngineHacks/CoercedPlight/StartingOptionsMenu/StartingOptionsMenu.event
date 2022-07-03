@@ -1,0 +1,20 @@
+//base code epically borrowed from circles
+
+#include "StartingOptionsMenu.lyn.event"
+#include "spin/spin.event"
+
+PUSH
+ORG $a20164
+POIN NewDifficultySelectFunc
+POP
+
+CasualModeFlagLink:
+BYTE $B0
+FixedGrowthsFlagLink:
+BYTE FIXED_GROWTHS_FLAG_ID
+OneRNFlagLink:
+BYTE Enable1RNFlag
+FatesRNFlagLink:
+BYTE EnableFatesRNFlag
+EvilRNFlagLink:
+BYTE EnableEvilRNFlag

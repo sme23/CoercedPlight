@@ -198,9 +198,7 @@ POP
   #ifdef INSTALL_AoE
 	#include "ExternalHacks/AoE/Installer.event"
   #endif 
-  
-  #include "CoercedPlight/_SmeHaxInstaller.event"
-  
+    
   // Unlock working on chests
   #include "ExternalHacks/UnlockChest/UnlockChest.event"
   
@@ -252,3 +250,6 @@ POP
     #include "Necessary/SuspendDebuffs/SuspendExpansion.event"
 
   #endif // USE_SAVE_EXPANSION
+
+  
+  #include "CoercedPlight/_SmeHaxInstaller.event"
