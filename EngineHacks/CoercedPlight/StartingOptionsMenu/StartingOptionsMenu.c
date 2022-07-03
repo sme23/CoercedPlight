@@ -220,7 +220,6 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Hit rate is exactly ");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "as displayed.");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "");
 			}
 			break;
 			
@@ -265,7 +264,6 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Hits always land if");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "hit rate is not 0.");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "");
 				}
 			break;
 			
@@ -295,7 +293,6 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Always a 50/50 chance");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "of landing a hit.");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "");
 				}
 			break;
 			
