@@ -132,6 +132,8 @@ ALIGN 4
 
 BeginningScene:
 
+ASMC SetOptionFlagsASMC
+
 LOAD1 0 OpeningNPCUnits
 ENUN
 CAM1 [9,24]

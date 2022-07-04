@@ -17,17 +17,22 @@ void StartingOptionsSetup(OptionsProc* CurrentProc);
 void updateOptionsPage(OptionsProc* CurrentProc);
 void StartingOptionsLoop(OptionsProc* CurrentProc);
 void GenerateBGTsa(u16 *MapOffset, u32 NumberOfTiles, u8 PaletteId, u16 baseTile);
+void SetOptionFlagsASMC();
+void SaveOptionsData(void* target, unsigned size);
+void LoadOptionsData(void* source, unsigned size);
+
+extern u8 CasualModeFlagLink;
+
+extern u8 FixedGrowthsFlagLink;
+extern u8 ZeroGrowthsFlagLink;
+extern u8 PerfectGrowthsFlagLink;
 
 extern u8 OneRNFlagLink;
 extern u8 FatesRNFlagLink;
-extern u8 CasualModeFlagLink;
-extern u8 FixedGrowthsFlagLink;
 extern u8 EvilRNFlagLink;
 extern u8 PerfectHitFlagLink;
 extern u8 NiceRNGFlagLink;
 extern u8 CoinTossRNGFlagLink;
-extern u8 PerfectGrowthsFlagLink;
-extern u8 ZeroGrowthsFlagLink;
 
 extern int SpinRoutine1;
 extern int SpinRoutine2;
@@ -96,10 +101,16 @@ typedef struct {
 	u16 timeSinceLastStartSelect;
 } InputBuffer;
 
-
 typedef struct {
   u32 x;
   u32 y;
 } LocationTable;
 
+typedef struct {
+	u8 CasualMode;
+	u8 GrowthSetting;
+	u8 RNGSetting;
+  
+} OptionsStruct;
 
+static OptionsStruct* const OptionsSaved = (OptionsStruct* const) (0x3005265); //last 4 bytes of event ids (unused)

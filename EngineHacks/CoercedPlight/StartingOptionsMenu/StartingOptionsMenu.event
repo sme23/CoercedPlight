@@ -3,9 +3,17 @@
 #include "StartingOptionsMenu.lyn.event" //reassembling will give you a bunch of warnings, you can ignore them
 #include "spin/spin.event"
 
+// This currently uses the last 4 bytes of global flags
+// for storing options state, which in practice means 
+// the removal of about 32 global flags on the end
+// but, this is only until the ASMC is run to set options
+// so just don't use them before then 
+
 PUSH
 ORG $a20164
 POIN NewDifficultySelectFunc
+ORG $83d20
+BYTE 0x13 //clear slightly fewer global flags on new file
 POP
 
 CasualModeFlagLink:
