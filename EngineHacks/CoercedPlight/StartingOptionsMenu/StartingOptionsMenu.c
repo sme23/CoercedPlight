@@ -292,54 +292,54 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 
 			case 0:
 			if (CurrentProc->CursorIndex == 2) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Higher hit rates land");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "more often, while lower");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 12, "Higher hit rates land");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 13, "more often, while lower");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "hit rates land less often.");
 			}
 			break;
 			
 			case 1:
 			if (CurrentProc->CursorIndex == 2) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Hit rate is exactly ");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "as displayed.");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 10, "Hit rate is exactly");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 10, "as displayed.");
 			}
 			break;
 			
 			case 2:
 			if (CurrentProc->CursorIndex == 2) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Lower hit rates are as");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "displayed, but higher");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 13, "Lower hit rates are as");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 12, "displayed, but higher");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "hit rates land more often.");
 				}
 			break;
 			
 			case 3:
 			if (CurrentProc->CursorIndex == 2) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Higher hit rates land");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "less often, while lower");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 12, "Higher hit rates land");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 12, "less often, while lower");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "hit rates land more often.");
 				}
 			break;
 			
 			case 4:
 			if (CurrentProc->CursorIndex == 2) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Hits always land if");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "hit rate is not 0.");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 10, "Hits always land if");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 10, "hit rate is not 0.");
 				}
 			break;
 			
 			case 5:
 			if (CurrentProc->CursorIndex == 2) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "True Hit, but");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "hit rates of 69");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 14, "always land.");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 10, "True Hit, but");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 10, "hit rates of 69");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 17), 0, 0, 10, "always land.");
 			}
 				break;
 			
 			case 6:
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Always a 50/50 chance");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "of landing a hit.");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 10, "of landing a hit.");
 				}
 			break;
 			
