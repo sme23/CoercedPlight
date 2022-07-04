@@ -2,7 +2,7 @@
 #include "StartingOptionsMenu.h"
 
 // lovingly borrowed from circles' self-rando
-static const ProcCode RandomOptionsProc[] = {
+static const ProcCode StartingOptionsProc[] = {
   PROC_SET_NAME("StartingOptions"),
   PROC_CALL_ROUTINE(LockGameLogic),
   PROC_END_ALL(0x8a20b1c),
@@ -52,7 +52,7 @@ static const ProcCode NewGameDifficultySelect[] = {
     
       PROC_NEW_CHILD(SpinProc), //one spinny boi
 
-    PROC_NEW_CHILD_BLOCKING(RandomOptionsProc),
+    PROC_NEW_CHILD_BLOCKING(StartingOptionsProc),
 
     // PROC_NEW_CHILD_BLOCKING(0x8a2ece0), //config proc
     PROC_SLEEP(10),
@@ -146,7 +146,7 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 	if (thisPage == 1){
 		//option names
 		DrawTextInline(0, BGLoc(BG0Buffer, 2, 3), 3, 0, 7, "Casual Mode:");
-		DrawTextInline(0, BGLoc(BG0Buffer, 2, 5), 3, 0, 8, "Fixed Growths:");
+		DrawTextInline(0, BGLoc(BG0Buffer, 2, 5), 3, 0, 8, "Growths:");
 		DrawTextInline(0, BGLoc(BG0Buffer, 2, 7), 3, 0, 7, "Hit RNG:");
 		// DrawTextInline(0, BGLoc(BG0Buffer, 2, 9), 3, 0, 10, "Peak/Water Units:");
 		// DrawTextInline(0, BGLoc(BG0Buffer, 2, 11), 3, 0, 8, "Weapon Stats:");
@@ -174,22 +174,56 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			}
 		}
 		
-		
-		if (CurrentProc->FixedGrowths == 0) { 
-			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "Off"); 
+		 
+		switch (CurrentProc->FixedGrowths) {
+			
+			case 0:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "Standard"); 
 			UnsetEventId(FixedGrowthsFlagLink);
+			UnsetEventId(PerfectGrowthsFlagLink);
+			UnsetEventId(ZeroGrowthsFlagLink);
 			if (CurrentProc->CursorIndex == 1) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Random chance of gaining");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "stats on level ups.");
 			}
-		}
-		else if (CurrentProc->FixedGrowths == 1) { 
-			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "On"); 
+			break;
+			
+			case 1:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "Fixed"); 
 			SetEventId(FixedGrowthsFlagLink);
+			UnsetEventId(PerfectGrowthsFlagLink);
+			UnsetEventId(ZeroGrowthsFlagLink);
+			if (CurrentProc->CursorIndex == 1) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Gain average stats");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "on level ups.");
+			}
+			break;
+			
+			case 2:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "0%"); 
+			UnsetEventId(FixedGrowthsFlagLink);
+			UnsetEventId(PerfectGrowthsFlagLink);
+			SetEventId(ZeroGrowthsFlagLink);
+			if (CurrentProc->CursorIndex == 1) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "No stat gains");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "on level ups.");
+			}
+			break;
+			
+			case 3:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "100%"); 
+			UnsetEventId(FixedGrowthsFlagLink);
+			SetEventId(PerfectGrowthsFlagLink);
+			UnsetEventId(ZeroGrowthsFlagLink);
 			if (CurrentProc->CursorIndex == 1) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Guaranteed stat gains");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "on level ups.");
 			}
+			break;
+			
+			default:
+			break;
+			
 		}
 		
 		switch (CurrentProc->RN) {
@@ -340,12 +374,20 @@ void StartingOptionsLoop(OptionsProc* CurrentProc){
 		updateOptionsPage(CurrentProc);
 	}}
 	//FixedGrowths
+	
 	if (CurrentProc->CursorIndex == 1) {
-      if (((newInput & InputLeft) != 0)|((newInput & InputRight) != 0)) {
-		  if (CurrentProc->FixedGrowths == 0) CurrentProc->FixedGrowths = 1;
-		  else CurrentProc->FixedGrowths = 0;
-		updateOptionsPage(CurrentProc);
-	}};
+      if (((newInput & InputLeft) != 0)) {
+		  if (CurrentProc->FixedGrowths == 0) CurrentProc->FixedGrowths = 3;
+		  else CurrentProc->FixedGrowths --;
+		  updateOptionsPage(CurrentProc);
+	  }
+	  if (((newInput & InputRight) != 0)) {
+		  if (CurrentProc->FixedGrowths == 3) CurrentProc->FixedGrowths = 0;
+		  else CurrentProc->FixedGrowths ++;
+		  updateOptionsPage(CurrentProc);
+	  }
+		
+	};
 		
 	//RN
 	if (CurrentProc->CursorIndex == 2) {

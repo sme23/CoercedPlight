@@ -26,6 +26,8 @@ extern u8 EvilRNFlagLink;
 extern u8 PerfectHitFlagLink;
 extern u8 NiceRNGFlagLink;
 extern u8 CoinTossRNGFlagLink;
+extern u8 PerfectGrowthsFlagLink;
+extern u8 ZeroGrowthsFlagLink;
 
 extern int SpinRoutine1;
 extern int SpinRoutine2;

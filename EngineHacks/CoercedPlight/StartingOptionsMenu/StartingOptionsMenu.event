@@ -1,6 +1,6 @@
 //base code epically borrowed from circles
 
-#include "StartingOptionsMenu.lyn.event"
+#include "StartingOptionsMenu.lyn.event" //reassembling will give you a bunch of warnings, you can ignore them
 #include "spin/spin.event"
 
 PUSH
@@ -24,5 +24,9 @@ NiceRNGFlagLink:
 BYTE EnableNiceRNGFlag
 CoinTossRNGFlagLink:
 BYTE EnableCoinTossRNGFlag
+ZeroGrowthsFlagLink:
+BYTE ZeroGrowthsFlag
+PerfectGrowthsFlagLink:
+BYTE PerfectGrowthsFlag
 
 
