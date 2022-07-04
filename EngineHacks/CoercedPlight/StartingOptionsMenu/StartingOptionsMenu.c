@@ -160,18 +160,10 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 		if (CurrentProc->CasualMode == 0) { 
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 3), 2, 0, 5, "Off"); 
 			OptionsSaved->CasualMode = 0;
-			if (CurrentProc->CursorIndex == 0) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Units die when they");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "fall in battle.");
-			}
 		}
 		else if (CurrentProc->CasualMode == 1) { 
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 3), 2, 0, 5, "On"); 
 			OptionsSaved->CasualMode = 1;
-			if (CurrentProc->CursorIndex == 0) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Units retreat when");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "they fall in battle.");
-			}
 		}
 		
 		 
@@ -180,37 +172,21 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			case 0:
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "Standard"); 
 			OptionsSaved->GrowthSetting = 0;
-			if (CurrentProc->CursorIndex == 1) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Random chance of gaining");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "stats on level ups.");
-			}
 			break;
 			
 			case 1:
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "Fixed"); 
 			OptionsSaved->GrowthSetting = 1;
-			if (CurrentProc->CursorIndex == 1) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Gain average stats");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "on level ups.");
-			}
 			break;
 			
 			case 2:
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "0%"); 
 			OptionsSaved->GrowthSetting = 2;
-			if (CurrentProc->CursorIndex == 1) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "No stat gains");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "on level ups.");
-			}
 			break;
 			
 			case 3:
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 5), 2, 0, 10, "100%"); 
 			OptionsSaved->GrowthSetting = 3;
-			if (CurrentProc->CursorIndex == 1) {
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Guaranteed stat gains");
-				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "on level ups.");
-			}
 			break;
 			
 			default:
@@ -223,6 +199,98 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			case 0:
 			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "True Hit");
 			OptionsSaved->RNGSetting = 0;
+			break;
+			
+			case 1:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Display Hit");
+			OptionsSaved->RNGSetting = 1;
+			break;
+			
+			case 2:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Fates Hit");
+			OptionsSaved->RNGSetting = 2;
+			break;
+			
+			case 3:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "False Hit");
+			OptionsSaved->RNGSetting = 3;
+			break;
+			
+			case 4:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Perfect Hit");
+			OptionsSaved->RNGSetting = 4;
+			break;
+			
+			case 5:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Nice Hit");
+			OptionsSaved->RNGSetting = 5;
+				break;
+			
+			case 6:
+			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Coin Toss");
+			OptionsSaved->RNGSetting = 6;
+			break;
+			
+			
+			default:
+			break;
+
+		}
+		
+		//now we get to do it all again, but for description text :/
+		
+		if (CurrentProc->CasualMode == 0) { 
+			if (CurrentProc->CursorIndex == 0) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 12, "Units die when they");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 10, "fall in battle.");
+			}
+		}
+		else if (CurrentProc->CasualMode == 1) { 
+			if (CurrentProc->CursorIndex == 0) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 13, "Units retreat when");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 10, "they fall in battle.");
+			}
+		}
+		
+		 
+		switch (CurrentProc->FixedGrowths) {
+			
+			case 0:
+			if (CurrentProc->CursorIndex == 1) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Random chance of gaining");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 10, "stats on level ups.");
+			}
+			break;
+			
+			case 1:
+			if (CurrentProc->CursorIndex == 1) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 12, "Gain average stats");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 10, "on level ups.");
+			}
+			break;
+			
+			case 2:
+			if (CurrentProc->CursorIndex == 1) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 12, "No stat gains");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 10, "on level ups.");
+			}
+			break;
+			
+			case 3:
+			if (CurrentProc->CursorIndex == 1) {
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 13, "Guaranteed stat gains");
+				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 10, "on level ups.");
+			}
+			break;
+			
+			default:
+			break;
+			
+		}
+		
+		switch (CurrentProc->RN) {
+
+			case 0:
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Higher hit rates land");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "more often, while lower");
@@ -231,8 +299,6 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			break;
 			
 			case 1:
-			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Display Hit");
-			OptionsSaved->RNGSetting = 1;
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Hit rate is exactly ");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "as displayed.");
@@ -240,8 +306,6 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			break;
 			
 			case 2:
-			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Fates Hit");
-			OptionsSaved->RNGSetting = 2;
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Lower hit rates are as");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "displayed, but higher");
@@ -250,8 +314,6 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			break;
 			
 			case 3:
-			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "False Hit");
-			OptionsSaved->RNGSetting = 3;
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Higher hit rates land");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "less often, while lower");
@@ -260,8 +322,6 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			break;
 			
 			case 4:
-			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Perfect Hit");
-			OptionsSaved->RNGSetting = 4;
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Hits always land if");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "hit rate is not 0.");
@@ -269,8 +329,6 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			break;
 			
 			case 5:
-			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Nice Hit");
-			OptionsSaved->RNGSetting = 5;
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "True Hit, but");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "hit rates of 69");
@@ -279,8 +337,6 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 				break;
 			
 			case 6:
-			DrawTextInline(0, BGLoc(BG0Buffer, 15, 7), 2, 0, 10, "Coin Toss");
-			OptionsSaved->RNGSetting = 6;
 			if (CurrentProc->CursorIndex == 2) {
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 13), 0, 0, 14, "Always a 50/50 chance");
 				DrawTextInline(0, BGLoc(BG0Buffer, 2, 15), 0, 0, 14, "of landing a hit.");
@@ -292,6 +348,7 @@ void updateOptionsPage(OptionsProc* CurrentProc) {
 			break;
 
 		}
+		
 	}
 	
  };
