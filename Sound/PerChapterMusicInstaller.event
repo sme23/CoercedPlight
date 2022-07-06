@@ -30,7 +30,8 @@
 
 SetChapterMapThemes(Ch1ID,DesertFieldDV,DesertFieldDV,DesertFieldDV)
 SetVictoryTheme(Ch1ID,DesertFieldDV)
-
+SetChapterMapThemes(Ch2ID,DesertFieldDV,DesertFieldDV,DesertFieldDV)
+SetVictoryTheme(Ch2ID,DesertFieldDV)
 
 // ===== Battle Music =====
 
@@ -45,8 +46,8 @@ SetVictoryTheme(Ch1ID,DesertFieldDV)
 
 
 
-SetChapterBattleThemes(Ch1ID,BattlePQ,BattlePQ,BattlePQ) 
-
+SetChapterBattleThemes(Ch1ID,Battle2BoF2,Battle2BoF2,Battle2BoF2) 
+SetChapterBattleThemes(Ch2ID,Battle2BoF2,Battle2BoF2,Battle2BoF2) 
 
 
 // ===== Boss Music =====

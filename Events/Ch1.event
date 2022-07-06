@@ -39,7 +39,7 @@ POIN $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
-TurnEventPlayer(0,DisableFlagEvent,1,255)
+TurnEventPlayer(30,DisableFlagEvent,1,255)
 TurnEventEnemy(F_TalkedThisTurn,HaventTalkedEvent,1,255)
 END_MAIN
 
@@ -67,8 +67,8 @@ Door(13,13)
 Door(15,15)
 Door(3,16)
 Door(15,16)
-Chest(Elixir,4,8)
-Chest(Javelin,14,8)
+CHES GF_LeftChestOpened Elixir [4,8] 0x14
+CHES GF_RightChestOpened Javelin [14,8] 0x14
 Arrive(2,0)
 Arrive(2,1)
 Arrive(16,0)
@@ -133,6 +133,10 @@ ALIGN 4
 BeginningScene:
 
 ASMC SetOptionFlagsASMC
+
+CALL BackupCasualModeFlag
+
+ENUT 0xB0 //casual mode forced on for the first 3 chapters
 
 LOAD1 0 OpeningNPCUnits
 ENUN
@@ -447,7 +451,8 @@ ENDA
 
 
 HaventTalkedEvent:
-ENUT 7
+ENUT F_TalkedThisTurn
+ENUT 30
 Text(Ch1Talk_Conclusion)
 
 TILECHANGE 10
@@ -468,6 +473,19 @@ CUSE (-2)
 
 ENUT F_LeftArea
 ENUT F_RightArea
+
+NoFade
+ENDA
+
+ALIGN 4
+BackupCasualModeFlag:
+CHECK_EVENTID 0xB0 //casual mode
+BEQ 1 s0 sC
+
+ENUF 0xB0 // casual mode
+ENUT GF_CasualModeOption
+
+LABEL 1
 
 NoFade
 ENDA

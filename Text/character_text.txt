@@ -35,7 +35,6 @@ Clever and cunning.[X]
 
 
 
-
 ## RombusName
 Rombus[X]
 
@@ -48,3 +47,11 @@ Udrein[X]
 
 ## UdreinDesc
 A soldier in service to Udrein.[X]
+
+## CultistName
+Cultist[X]
+
+## CultistDesc
+A cultist dedicated to[N]
+the Goddess Carthena.[X]
+

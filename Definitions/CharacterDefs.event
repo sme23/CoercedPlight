@@ -8,9 +8,11 @@
 #define Ray 5
 
 #define Rombus 64
+#define Carthena 65
 
 #define Udrein 96
 #define UdreinUnique 97
+#define Cultist 98
 
 // mug IDs
 

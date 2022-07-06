@@ -1,3 +1,4 @@
 #include "NewLordSplitMenu/NewLordSplitMenu.event"
 #include "RNByFlag/Installer.event"
 #include "StartingOptionsMenu/StartingOptionsMenu.event"
+#include "MiscFixes.event"

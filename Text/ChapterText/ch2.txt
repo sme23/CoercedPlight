@@ -1,0 +1,86 @@
+
+## Ch2OpeningText1
+[OpenMidLeft][LoadDominic]
+[OpenFarRight][LoadTaylor]
+[OpenRight][LoadLydia]
+I can hear chanting[N]
+down this hall[Beat][A]
+[OpenMidLeft]
+They've already started.[A][N]
+Let's hurry.[A][X]
+
+## Ch2MidText1
+[OpenMidLeft][LoadGreenShaman]
+[OpenMidRight][LoadDominic]
+[ToggleMouthMove]!!![ToggleMouthMove][A]
+[OpenMidLeft]
+Mwahaha, you fell right[N]
+into our trap![A][N]
+With this final sacrifice,[N]
+our Goddess will be revived![A]
+[OpenMidRight]
+[ToggleMouthMove]...![ToggleMouthMove][A]
+[OpenMidLeft]
+What's wrong, little princeling?[N]
+Cat's got your tongue?[A][N]
+We can't have you interrupting[N]
+at this critical moment, now.[A][X]
+
+## Ch2MidText2
+[OpenMidLeft][LoadElliot]
+Milord![....] No![....][N]
+Not like this[Beat][A]
+[Event]
+[OpenMidRight][LoadGreenShaman]
+Silence, fools![N]
+You'll not interrupt us![A]
+[Event][N]
+Now, where were we?[A][X]
+
+## Ch2MidText3
+[OpenMidLeft][LoadGreenShaman]
+O great Goddess Carthena,[N]
+hear our call![A][N]
+Return to us, your followers,[N]
+in the land of the living![A][N]
+We offer to you a vessel,[N]
+one of royal blood![A][N]
+Return to this world,[A][N]
+and take your rightful[N]
+place as its ruler![A][X]
+
+
+## Ch2MidText4
+[OpenFarFarRight][LoadDominic][CloseEyes]
+[OpenFarFarLeft][LoadElliot]
+Milord![A][N]
+Milord, are you okay?[A]
+[OpenFarFarRight][MoveMidRight]
+[OpenFarFarLeft][MoveMidLeft]
+[OpenMidRight]
+[Beat][A]
+[OpenMidLeft]
+My Prince, please![N]
+Open your eyes![A][X]
+
+## Ch2MidText5
+[OpenMidRight][LoadDominic]
+[OpenMidLeft][LoadElliot]
+Are you hurt?[A]
+[OpenMidRight]
+No[Beat][N]
+No, I'm alright.[A][N]
+It seems that whatever they were[N]
+trying to do to me, it didn't work.[A]
+[OpenMidLeft]
+I'm glad to hear it.[A][N]
+Come, let's get out of here.[A][N]
+The situation appears[N]
+to be resolved,[A][N]
+and we best be on our way.[A]
+[OpenMidRight]
+Yes[Beat][N]
+Yes, let's.[A][X]
+
+
+

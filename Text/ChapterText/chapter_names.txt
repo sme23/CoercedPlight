@@ -1,3 +1,9 @@
 
 ## Ch1Name
 1: Diplomacy[X]
+
+## Ch2Name
+2: Ritual[X]
+
+## Ch3Name
+3: Leaving[X]

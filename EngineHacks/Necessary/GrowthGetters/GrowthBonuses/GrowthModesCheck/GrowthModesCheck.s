@@ -2,7 +2,7 @@
 .global GrowthModifierModes
 .type GrowthModifierModes, %function
 
-.equ CheckEventId,0x08083DA89
+.equ CheckEventId,0x08083DA9
 
 GrowthModifierModes:
 
@@ -27,7 +27,7 @@ ldrb r0,[r0]
 ldr r3,=CheckEventId
 bl bx_r3
 cmp r0,#0
-beq SecondCheck
+beq GoBack
 
 cmp r5,#100
 bgt DoubleAdd

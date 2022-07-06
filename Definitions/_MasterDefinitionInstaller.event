@@ -4,3 +4,4 @@
 #include "EventPointerTableDefs.event"
 #include "GraphicsDefs.event"
 #include "ItemDefs.event"	
+#include "GlobalFlagDefs.event"

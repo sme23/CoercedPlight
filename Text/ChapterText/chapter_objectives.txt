@@ -9,3 +9,9 @@ Search[X]
 
 ## Ch1StatusObjectiveText
 Find the hidden temple.[X]
+
+## Ch2StatusObjectiveText
+Stop the ritual.[X]
+
+## Ch3StatusObjectiveText
+Escape from the castle.[X]

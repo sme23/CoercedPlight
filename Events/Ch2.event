@@ -19,9 +19,12 @@ CharacterBasedEvents:
 END_MAIN
 
 LocationBasedEvents:
+DOOR 7 [3,0] 0x12
+DOOR 7 [11,0] 0x12
 END_MAIN
 
 MiscBasedEvents:
+AFEV 8 RitualDoorOpened 7
 CauseGameOverIfLordDies
 END_MAIN
 
@@ -38,9 +41,28 @@ Tutorial:
 END_MAIN
 
 Units1:
+UNIT Dominic Lord 0 Level(1,Ally,0) [0,17] 0 0 1 REDA7R17 NoItems NoAI
+UNIT Elliot Bishop 0 Level(1,Ally,0) [0,18] 0 0 1 REDA5R18 NoItems NoAI
+UNIT Taylor Cavalier_F 0  Level(1,Ally,0) [0,19] 0 0 1 REDA4R19 NoItems NoAI
+UNIT Lydia Cavalier_F 0 Level(1,Ally,0) [0,19] 0 0 1 REDA3R19 NoItems NoAI
+UNIT Ray Thief 0 Level(1,Ally,0) [0,17] 0 0 1 REDA4R17 NoItems NoAI
 UNIT
 
 EnemyUnits:
+UNIT Udrein Mercenary 0 Level(2,Enemy,1) [4,9] 0 0 0 1 [IronSword] AttackInRangeAI
+UNIT Udrein Mercenary 0 Level(2,Enemy,1) [13,3] 0 0 0 1 [IronSword] AttackInRangeAI
+UNIT Udrein Mercenary 0 Level(2,Enemy,1) [7,12] 0 0 0 1 [IronBlade] AttackInRangeAI
+UNIT Udrein Soldier 0 Level(3,Enemy,1) [10,9] 0 0 0 1 [IronLance] AttackInRangeAI
+UNIT Udrein Soldier 0 Level(3,Enemy,1) [1,3] 0 0 0 1 [IronLance] AttackInRangeAI
+UNIT Udrein Soldier 0 Level(3,Enemy,1) [7,8] 0 0 0 1 [IronLance] AttackInRangeAI
+UNIT
+
+ShamenUnits:
+UNIT Cultist Shaman 0 Level(10,NPC,1) [7,0] 0 0 0 1 NoItems NeverMoveAI
+UNIT Cultist Shaman 0 Level(10,NPC,1) [4,2] 0 0 0 1 NoItems NeverMoveAI
+UNIT Cultist Shaman 0 Level(10,NPC,1) [10,2] 0 0 0 1 NoItems NeverMoveAI
+UNIT Cultist Shaman 0 Level(10,NPC,1) [5,6] 0 0 0 1 NoItems NeverMoveAI
+UNIT Cultist Shaman 0 Level(10,NPC,1) [9,6] 0 0 0 1 NoItems NeverMoveAI
 UNIT
 
 Traps1:
@@ -52,12 +74,174 @@ ENDTRAP
 ALIGN 4
 
 BeginningScene:
+LOAD1 0 ShamenUnits
+LOAD1 0 EnemyUnits
+ENUN
+CAM1 [7,19]
+MUSC Tension
+
+FADU 10
+
+LOAD1 0 Units1
+ENUN
+
+CURSOR_FLASHING Dominic
+STAL 20
+REMOVE_CURSORS
+
+SetBackground(Castle_Hall_3)
+Text(Ch2OpeningText1)
+EndConvo
 
 NoFade
 ENDA
+
 
 EndingScene:
 
 NoFade
 ENDA
+
+
+RitualDoorOpened:
+//warp Dominic into the center of the ritual room @ 7,3
+CAM1 [7,3]
+STAL 5
+MUSC 0x7FFF
+CHECK_COORDS Dominic
+SADD sB sC s0
+WARPOUT [-1,-1]
+HIDEUNIT Dominic
+ENDWARP
+STAL 20
+MOVE -1 Dominic [7,3]
+WARPIN [7,3]
+SHOWUNIT Dominic
+ENDWARP
+SET_HASMOVED Dominic
+UNIT_COLORS 0 0 2
+
+Text(Ch2MidText1)
+
+CAM1 Elliot
+STAL 5
+
+TEXTSTART
+TEXTSHOW Ch2MidText2
+TEXTEND
+CAM1 [7,3]
+TEXTCONT
+TEXTEND
+TILEREVERT 0
+TILEREVERT 1
+SOUN 0xB1 //door sfx
+STAL 10
+TEXTCONT
+TEXTEND
+REMA
+
+Text(Ch2MidText3)
+
+GLOWINGCROSS Dominic
+
+STAL 20
+
+
+STAL 20
+
+SOUN 0xF4 //static
+FAWI 40
+FAWU 40
+
+STAL 10
+
+SOUN 0xF4 //static
+FAWI 40
+FAWU 40
+
+STAL 2
+
+SOUN 0xF4 //static
+FAWI 40
+FAWU 40
+
+STAL 20
+
+EARTHQUAKE 0 True
+
+STARTFADE
+FADECOLORS 0x1006 1 8 8 8
+
+STAL 120
+
+SUMMONUNIT Dominic
+GLOWINGCROSS_END
+
+SOUN 0x3BF //summon sfx
+STAL 10
+
+WARPIN [7,1]
+LOAD1 0 CutsceneGodUnit
+ENUN
+ENDWARP
+
+STAL 80
+
+MOVEONTO 0 Carthena Dominic
+ENUN
+
+FADI 40
+
+REMOVEUNIT Carthena
+EARTHQUAKE_END
+WEATHER 0
+ENDFADE
+
+FADU 10
+
+STAL 80
+
+WARPOUT [7,0]
+SVAL sB Coords(7,0)
+REMOVEUNIT (-2)
+ENDWARP
+
+WARPOUT [4,2]
+SVAL sB Coords(4,2)
+REMOVEUNIT (-2)
+ENDWARP
+
+WARPOUT [10,2]
+SVAL sB Coords(10,2)
+REMOVEUNIT (-2)
+ENDWARP
+
+WARPOUT [5,6]
+SVAL sB Coords(5,6)
+REMOVEUNIT (-2)
+ENDWARP
+
+WARPOUT [9,6]
+SVAL sB Coords(9,6)
+REMOVEUNIT (-2)
+ENDWARP
+
+SetBackground(BlankBG)
+
+STAL 80
+SOUN 0xB1 //door sfx
+
+Text(Ch2MidText4)
+SetBackground(Castle_Hall_4)
+MUSC Into_the_Shadow_of_Victory
+Text(Ch2MidText5)
+
+MNC2 Ch3ID
+
+NoFade
+ENDA
+
+CutsceneGodUnit:
+UNIT Carthena EvilGod 0 Level(20,Enemy,0) [7,1] 0 0 0 1 NoItems NoAI 
+UNIT
 
