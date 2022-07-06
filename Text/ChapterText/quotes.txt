@@ -1,0 +1,87 @@
+
+## DominicDeathQuote
+[OpenMidRight][LoadDominic][CloseEyes]
+No[Beat]No![A][CloseSpeechFast][ToggleRed][ToggleMouthMove]
+How unfortunate.[A][N]
+I'll need to find a new pawn[Beat][N]
+Disappointing.[ToggleMouthMove][ToggleRed][A][X]
+
+## ElliotDeathQuote
+[OpenMidRight][LoadElliot][CloseEyes]
+Ah[Beat][A][N]
+Milord, be safe[Beat][A][X]
+
+## TaylorDeathQuote
+[OpenMidRight][LoadTaylor][CloseEyes]
+This is it, huh[Beat]?[A][N]
+I have no regrets.[A][X]
+
+## LydiaDeathQuote
+[OpenMidRight][LoadLydia][CloseEyes]
+Glory[Beat][N]
+to Esnia[Beat][A][X]
+
+## RayDeathQuote
+[OpenMidRight][LoadRay][CloseEyes]
+Dang[Beat][A][N]
+Looks like my luck[Beat][N]
+has finally run out[Beat][A][X]
+
+## DominicDeathQuote_Beginning
+[OpenMidRight][LoadDominic][CloseEyes]
+No! I can't fall here[Beat][A][N]
+We'd only[Beat] just begun[Beat][A][X]
+
+## ElliotRetreatQuote
+[OpenMidRight][LoadElliot]
+Ah, I've over-taxed myself.[N]
+I'll have to withdraw for now.[A][X]
+
+## TaylorRetreatQuote
+[OpenMidRight][LoadTaylor]
+Damn[Beat][N]
+I'll have to withdraw.[A][X]
+
+## LydiaRetreatQuote
+[OpenMidRight][LoadLydia]
+I've pushed too far[Beat][N]
+I must retreat.[A][X]
+
+## RayRetreatQuote
+Whoops, I'd better retreat.[A][N]
+I'll live to steal another day.[A][X]
+
+## RayDeathQuote_Beginning
+[OpenMidRight][LoadRay][CloseEyes]
+Dang[Beat][A][N]
+Looks like my luck[Beat][N]
+has finally run out[Beat][A][ClearFace][OpenEyes]
+[OpenMidLeft][LoadDominic]
+Ray, no![A][N]
+He was necessary for[N]
+this mission[Beat][A][X]
+
+## DominicEscapeQuote
+[OpenMidRight][LoadDominic]
+Time to go.[A][N]
+Barely made it[Beat][A][X]
+
+## ElliotEscapeQuote
+[OpenMidRight][LoadElliot]
+Ah, the exit[Beat][N]
+Be safe, my lord.[A][X]
+
+## TaylorEscapeQuote
+[OpenMidRight][LoadTaylor]
+Here we are.[A][N]
+I'll see you at the[N]
+rendevous point.[A][X]
+
+## LydiaEscapeQuote
+[OpenMidRight][LoadLydia]
+I'll go on ahead.[A][X]
+
+## RayEscapeQuote
+[OpenMidRight][LoadRay]
+Ah, the thrill of the chase![A][X]
+

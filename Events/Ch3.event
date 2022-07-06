@@ -1,0 +1,140 @@
+EventPointerTable(Ch3EventsID, PointerList)
+
+PointerList:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno1 Dunno2 Dunno3 Tutorial
+POIN Traps1 Traps2
+POIN Units1 Units1  //This unit group determines the number and position of deployment slots when there is a prep screen
+POIN $0 $0 $0
+POIN $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+END_MAIN
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Door(5,4)
+Door(13,4)
+Door(2,7)
+Door(16,7)
+Door(8,10)
+Door(9,10)
+Door(10,10)
+Door(0,10)
+Door(1,10)
+Door(17,10)
+Door(18,10)
+Door(3,15)
+Door(5,13)
+Door(13,13)
+Door(15,15)
+Door(3,16)
+Door(15,16)
+CHES GF_LeftChestOpened RedGem [4,8] 0x14
+CHES GF_RightChestOpened Javelin [14,8] 0x14
+Escape(8,25)
+Escape(9,25)
+Escape(10,25)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno1:
+END_MAIN
+
+Dunno2:
+END_MAIN
+
+Dunno3:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+Units1:
+UNIT Dominic Lord 0 Level(0,Ally,0) [14,1] 0 0 1 REDA17R2 NoItems NoAI
+UNIT Elliot Bishop 0 Level(0,Ally,0) [14,1] 0 0 1 REDA18R1 NoItems NoAI
+UNIT Taylor Cavalier_F 0 Level(0,Ally,0) [14,1] 0 0 1 REDA17R1 NoItems NoAI
+UNIT Lydia Cavalier_F 0 Level(0,Ally,0) [14,1] 0 0 1 REDA18R0 NoItems NoAI
+UNIT Ray Thief 0 Level(0,Ally,0) [14,1] 0 0 1 REDA16R1 NoItems NoAI
+UNIT
+
+EnemyUnits:
+UNIT Rombus Peer 0 Level(10,Enemy,0) [18,12] 0 0 1 REDA17R5 NoItems NoAI
+UNIT Udrein Soldier 0 Level(4,Enemy,1) [18,12] 0 0 1 REDA17R4 [IronLance] AttackInRangeAI
+UNIT Udrein Soldier 0 Level(4,Enemy,1) [18,12] 0 0 1 REDA18R4 [IronLance] AttackInRangeAI
+UNIT Udrein Mercenary 0 Level(3,Enemy,1) [18,12] 0 0 1 REDA18R5 [IronBlade] AttackInRangeAI
+UNIT Udrein Mercenary 0 Level(3,Enemy,1) [18,12] 0 0 1 REDA13R12 [IronBlade] AttackInRangeAI
+UNIT Udrein Cavalier 0 Level(3,Enemy,1) [0,12] 0 0 1 REDA5R12 [IronLance] AttackInRangeAI
+UNIT Udrein Cavalier 0 Level(3,Enemy,1) [0,12] 0 0 1 REDA9R11 [IronLance] AttackInRangeAI
+UNIT Udrein Archer 0 Level(4,Enemy,1) [14,15] 0 0 1 REDA14R15 [IronBow] AttackInRangeAI
+UNIT Udrein Archer 0 Level(4,Enemy,1) [6,16] 0 0 1 REDA6R16 [IronBow] AttackInRangeAI
+UNIT Udrein Cavalier 0 Level(4,Enemy,1) [,25] 0 0 1 REDA8R19 [IronSword] AttackInRangeAI
+UNIT Udrein Fighter 0 Level(3,Enemy,1) [9,25] 0 0 1 REDA8R23 [IronAxe] AttackInRangeAI
+UNIT Udrein Fighter 0 Level(3,Enemy,1) [9,25] 0 0 1 REDA10R23 [Javelin] AttackInRangeAI
+UNIT Udrein Soldier 0 Level(4,Enemy,1) [9,25] 0 0 1 REDA9R23 [IronAxe] AttackInRangeAI
+UNIT
+
+Traps1:
+MapSpriteTrap(GreenSigilTrapID,8,25)
+MapSpriteTrap(GreenSigilTrapID,9,25)
+MapSpriteTrap(GreenSigilTrapID,10,25)
+ENDTRAP
+ALIGN 4
+
+Traps2:
+ENDTRAP
+ALIGN 4
+
+BeginningScene:
+ENUT AllUnitsMustEscapeFlag
+CHECK_EVENTID GF_LeftChestOpened
+BEQ 0 s0 sC
+TILECHANGE 0 //left chest
+LABEL 0
+CHECK_EVENTID GF_RightChestOpened
+BEQ 1 s0 sC
+TILECHANGE 1 //right chest
+LABEL 1
+
+CAM1 [18,0]
+
+FADU 10
+
+LOAD1 0 Units1
+ENUN
+
+Text(Ch3OpeningText1)
+
+MUSC Tension
+
+TILECHANGE 12
+SOUN 0xB1 //door sfx
+LOAD1 0 EnemyUnits
+ENUN
+
+Text(Ch3OpeningText2)
+
+MOVE 0 Rombus [9,19]
+ENUN
+REMOVEUNIT Rombus
+
+Text(Ch3OpeningText3)
+
+NoFade
+ENDA
+
+EndingScene:
+
+
+NoFade
+ENDA
+

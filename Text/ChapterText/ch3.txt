@@ -1,0 +1,25 @@
+
+## Ch3OpeningText1
+[OpenMidLeft][LoadElliot]
+[OpenMidRight][LoadDominic]
+We're almost out of here.[A]
+[OpenMidLeft]
+Something's wrong.[A][N]
+It's too quiet[Beat][A][X]
+
+
+## Ch3OpeningText2
+[OpenMidLeft][LoadDominic]
+[OpenMidRight][LoadKing]
+Quite right, you are.[A][N]
+Well, if it isn't King Esnia's whelp.[N]
+Doing a bit of espionage, are we?[A][N]
+That's a serious crime, you know.[A][N]
+Guards! Restrain them![A][X]
+
+## Ch3OpeningText3
+[OpenMidRight][LoadDominic]
+We're going to have[N]
+to fight our way out.[A][N]
+Everyone, get ready![A][X]
+
