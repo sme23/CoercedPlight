@@ -105,7 +105,7 @@ DeathQuoteEvent(AnyCh,0,Ray,RayDeathEvent)
 
 QuoteListEnd
 
-#define RetreatDeathQuoteEvent(deathTextID,retreatTextID) "SVAL s1 deathTextID; SENQUEUE s1; SVAL s1 retreatTextID; SENQUEUE s1; CALL RetreatDeathQuoteEvent_TextHandler; NoFade; ENDA"
+#define RetreatDeathQuoteEvent(deathTextID,retreatTextID) "SVAL sD 0; SVAL s1 deathTextID; SENQUEUE s1; SVAL s1 retreatTextID; SENQUEUE s1; CALL RetreatDeathQuoteEvent_TextHandler; NoFade; ENDA"
 
 ElliotDeathEvent:
 RetreatDeathQuoteEvent(ElliotDeathQuote,ElliotRetreatQuote)

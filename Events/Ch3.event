@@ -13,6 +13,7 @@ POIN $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
+TurnEventPlayer(0,ReinforcementsEvent,6,250)
 END_MAIN
 
 CharacterBasedEvents:
@@ -77,9 +78,9 @@ UNIT Udrein Cavalier 0 Level(3,Enemy,1) [0,12] 0 0 1 REDA5R12 [IronLance] Attack
 UNIT Udrein Cavalier 0 Level(3,Enemy,1) [0,12] 0 0 1 REDA9R11 [IronLance] AttackInRangeAI
 UNIT Udrein Archer 0 Level(4,Enemy,1) [14,15] 0 0 1 REDA14R15 [IronBow] AttackInRangeAI
 UNIT Udrein Archer 0 Level(4,Enemy,1) [6,16] 0 0 1 REDA6R16 [IronBow] AttackInRangeAI
-UNIT Udrein Cavalier 0 Level(4,Enemy,1) [,25] 0 0 1 REDA8R19 [IronSword] AttackInRangeAI
+UNIT Udrein Cavalier 0 Level(4,Enemy,1) [9,25] 0 0 1 REDA8R19 [IronSword] AttackInRangeAI
 UNIT Udrein Fighter 0 Level(3,Enemy,1) [9,25] 0 0 1 REDA8R23 [IronAxe] AttackInRangeAI
-UNIT Udrein Fighter 0 Level(3,Enemy,1) [9,25] 0 0 1 REDA10R23 [Javelin] AttackInRangeAI
+UNIT Udrein Fighter 0 Level(3,Enemy,1) [9,25] 0 0 1 REDA10R23 [IronAxe] AttackInRangeAI
 UNIT Udrein Soldier 0 Level(4,Enemy,1) [9,25] 0 0 1 REDA9R23 [IronAxe] AttackInRangeAI
 UNIT
 
@@ -133,8 +134,95 @@ NoFade
 ENDA
 
 EndingScene:
+MUSC Victory
+SetBackground(Woodland)
+Text(Ch3EndingText1)
+FADI 10
+MUSCSLOW 0x7FFF
+MUSCSLOW Env_Night
+SetBackground(Woodland_Night)
 
+
+FACE_SHOW 1 DominicMug
+
+SVAL sB Coords(4,4)
+SOLOTEXTBOXSTART
+TEXTSHOW Ch3EndingText2_1
+TEXTEND
+
+SVAL sB Coords(-1,-1)
+SOLOTEXTBOXSTART 
+TEXTSHOW Ch3EndingText2_2
+TEXTEND
+
+SVAL sB Coords(4,4)
+SOLOTEXTBOXSTART
+TEXTSHOW Ch3EndingText2_3
+TEXTEND
+
+SVAL sB Coords(-1,-1)
+SOLOTEXTBOXSTART 
+TEXTSHOW Ch3EndingText2_4
+TEXTEND
+
+SVAL sB Coords(4,4)
+SOLOTEXTBOXSTART
+TEXTSHOW Ch3EndingText2_5
+TEXTEND
+
+SVAL sB Coords(-1,-1)
+SOLOTEXTBOXSTART 
+TEXTSHOW Ch3EndingText2_6
+TEXTEND
+
+SVAL sB Coords(4,4)
+SOLOTEXTBOXSTART
+TEXTSHOW Ch3EndingText2_7
+TEXTEND
+
+SVAL sB Coords(-1,-1)
+SOLOTEXTBOXSTART 
+TEXTSHOW Ch3EndingText2_8
+TEXTEND
+
+SVAL sB Coords(4,4)
+SOLOTEXTBOXSTART
+TEXTSHOW Ch3EndingText2_9
+TEXTEND
+
+SVAL sB Coords(-1,-1)
+SOLOTEXTBOXSTART 
+TEXTSHOW Ch3EndingText2_10
+TEXTEND
+
+SVAL sB Coords(4,4)
+SOLOTEXTBOXSTART
+TEXTSHOW Ch3EndingText2_11
+TEXTEND
+
+SVAL sB Coords(-1,-1)
+SOLOTEXTBOXSTART 
+TEXTSHOW Ch3EndingText2_12
+TEXTEND
+
+REMA
+
+MNC2 Ch4ID
 
 NoFade
 ENDA
+
+ReinforcementUnits:
+UNIT Udrein Soldier 0 Level(6,Enemy,1) [0,12] 0 0 1 REDA0R12 [SteelLance] NoAI
+UNIT Udrein Soldier 0 Level(7,Enemy,1) [18,12] 0 0 1 REDA18R12 [SteelLance] NoAI
+UNIT Udrein Mercenary 0 Level(5,Enemy,1) [4,7] 0 0 1 REDA4R7 [IronBlade,DoorKey] NoAI
+UNIT Udrein Mercenary 0 Level(6,Enemy,1) [14,7] 0 0 1 REDA14R7 [IronBlade,DoorKey] NoAI
+UNIT Udrein Cavalier 0 Level(6,Enemy,1) [4,1] 0 0 1 REDA1R1 [SteelLance,DoorKey] NoAI
+UNIT Udrein Cavalier 0 Level(6,Enemy,1) [14,1] 0 0 1 REDA17R1 [SteelLance,DoorKey] NoAI
+UNIT Udrein Cavalier 0 Level(6,Enemy,1) [4,1] 0 0 1 REDA0R1 [SteelLance] NoAI
+UNIT Udrein Cavalier 0 Level(6,Enemy,1) [14,1] 0 0 1 REDA18R1 [SteelLance] NoAI
+UNIT
+
+ReinforcementsEvent:
+ReinforcementEvent(ReinforcementUnits)
 

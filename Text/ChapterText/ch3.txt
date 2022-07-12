@@ -23,3 +23,105 @@ We're going to have[N]
 to fight our way out.[A][N]
 Everyone, get ready![A][X]
 
+
+## Ch3EndingText1
+[OpenMidLeft][LoadElliot]
+[OpenMidRight][LoadDominic]
+Looks like we've lost them.[A]
+[OpenMidLeft]
+We're lucky to have made[N]
+it out in one piece.[A]
+[OpenMidRight]
+The mission was a[N]
+success, though.[A][N]
+The world is safe[N]
+for another day.[A]
+[OpenMidLeft]
+But at what cost?[A][N]
+The diplomatic fallout of this[N]
+alone is quite the predicament.[A][N]
+Your father will not be[N]
+pleased to hear of this.[A]
+[OpenMidRight]
+That's a problem to solve[N]
+once we return home.[A][N]
+For now, we should make[N]
+camp here for the night.[A][X]
+
+
+## Ch3EndingText2_1
+...[.....][A][X]
+
+## Ch3EndingText2_2
+[ToggleRed]Yawn...[N]
+I've slept for so long.[A][ToggleRed][X]
+
+## Ch3EndingText2_3
+Who's there!?[A][X]
+
+## Ch3EndingText2_4
+[ToggleRed]I'm sure you can figure it out, mortal.[A][ToggleRed][X]
+
+## Ch3EndingText2_5
+...[....]![.....] No, it can't be![A][N]
+We stopped them from reviving Carthena.[N]
+There's no way you could be here now![A][X]
+
+## Ch3EndingText2_6
+[ToggleRed]Reviving me? Silly boy, they[N]
+were never trying to do that.[A][N]
+They were simply giving me a vessel[N]
+through which to revive myself.[A][N]
+A puppet, to follow my every command.[A][N]
+And I must say, they made[N]
+an excellent decision,[A][N]
+choosing you for the job.[A][N]
+The prince of the land responsible[N]
+for my destruction? How ironic![A][ToggleRed][X]
+
+## Ch3EndingText2_7
+...[A][N]
+.....[A][X]
+
+## Ch3EndingText2_8
+[ToggleRed]Is the reality of your[N]
+situation finally setting in?[A][N]
+You were drawn here on[N]
+purpose by my disciples.[A][N]
+You[.....] were always the[N]
+target of their ritual.[A][N]
+This was their plan all along,[A][N]
+and you fell for it,[N]
+hook,[......] line,[......] and sinker.[......][A][ToggleRed][X]
+
+## Ch3EndingText2_9
+No...[......]No![....][A][X]
+
+## Ch3EndingText2_10
+[ToggleRed]Now, let me make the specifics[N]
+of your predicament very clear.[A][N]
+You will[.....] do as I command.[A][N]
+You will not[.....] inform anyone[N]
+of my presence within you.[A][N]
+If you defy me,[A][N]
+I will inflict upon you[N]
+unimaginable torture.[A][N]
+And don't think offing[N]
+yourself will do any good.[A][N]
+You'll simply free my spirit,[N]
+and I'll inhabit someone else.[A][N]
+That king of father[N]
+you have, perhaps...?[A][N]
+Do I make myself clear?[A][ToggleRed][X]
+
+## Ch3EndingText2_11
+...[A][N]
+Yes...[A][N]
+Yes, I understand.[A][X]
+
+## Ch3EndingText2_12
+[ToggleRed]Good.[A][N]
+Now, rest up.[A][N]
+We have a very busy day tomorrow...[......][A][ToggleRed][X]
+
+

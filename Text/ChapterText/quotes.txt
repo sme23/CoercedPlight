@@ -48,6 +48,7 @@ I've pushed too far[Beat][N]
 I must retreat.[A][X]
 
 ## RayRetreatQuote
+[OpenMidRight][LoadRay]
 Whoops, I'd better retreat.[A][N]
 I'll live to steal another day.[A][X]
 
