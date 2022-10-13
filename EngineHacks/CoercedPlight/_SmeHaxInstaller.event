@@ -2,3 +2,4 @@
 #include "RNByFlag/Installer.event"
 #include "StartingOptionsMenu/StartingOptionsMenu.event"
 #include "MiscFixes.event"
+#include "Debug/_DebugToolsInstaller.event"

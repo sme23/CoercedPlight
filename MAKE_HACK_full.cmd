@@ -61,7 +61,7 @@ echo:
 echo Assembling
 
 cd "%base_dir%EventAssembler"
-ColorzCore A FE8 "-output:%target_rom%" "-input:%main_event%" --nocash-sym --build-times
+ColorzCore A FE8 "-output:%target_rom%" "-input:%main_event%" --nocash-sym --build-times -def:_RELEASE_=1
 
 if /I not [%1]==[quick] (
 

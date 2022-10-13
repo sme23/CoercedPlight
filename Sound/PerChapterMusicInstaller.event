@@ -32,6 +32,8 @@ SetChapterMapThemes(Ch1ID,DesertFieldDV,DesertFieldDV,DesertFieldDV)
 SetVictoryTheme(Ch1ID,DesertFieldDV)
 SetChapterMapThemes(Ch2ID,DesertFieldDV,DesertFieldDV,DesertFieldDV)
 SetVictoryTheme(Ch2ID,DesertFieldDV)
+SetChapterMapThemes(Ch3ID,DesertFieldDV,DesertFieldDV,DesertFieldDV)
+SetVictoryTheme(Ch3ID,DesertFieldDV)
 
 // ===== Battle Music =====
 
@@ -44,10 +46,10 @@ SetVictoryTheme(Ch2ID,DesertFieldDV)
 #define SetChapterBattleThemes(chID,pSongID,eSongID,nSongID) "SetPlayerPhaseBattleTheme(chID,pSongID); SetEnemyPhaseBattleTheme(chID,eSongID); SetNPCPhaseBattleTheme(chID,nSongID)"
 
 
-
-
 SetChapterBattleThemes(Ch1ID,Battle2BoF2,Battle2BoF2,Battle2BoF2) 
 SetChapterBattleThemes(Ch2ID,Battle2BoF2,Battle2BoF2,Battle2BoF2) 
+SetChapterBattleThemes(Ch3ID,Battle2BoF2,Battle2BoF2,Battle2BoF2) 
+
 
 
 // ===== Boss Music =====

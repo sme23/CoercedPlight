@@ -1,0 +1,71 @@
+WorldMapPointerTable(0x36,WMEvent)
+
+ALIGN 4
+WMEvent:
+EVBIT_MODIFY 1
+MUSCFAST 0x7FFF
+STAL 32
+MUSC The_Beginning
+WM_SHOWDRAWNMAP 0 0 0 0x10 0
+STAL 2
+WM_FADEOUT 0 0 0
+WM_TEXTDECORATE
+
+WM_SHOWTEXTWINDOW 0x0 0x28 0x1
+WM_WAITFORTEXT
+WM_TEXTSTART
+WM_TEXT Ch4WMText
+TEXTEND
+WM_HIGHLIGHT 0 0 0 //middle value is index of border to display
+TEXTCONT
+TEXTEND
+STAL 30
+WM_HIGHLIGHTCLEAR1 0 0 0 //middle value is index of border to clear
+WM_HIGHLIGHTCLEAR2 0 0 0 //middle value is index of border to clear
+STAL 30
+WM_HIGHLIGHT 0 1 0 //middle value is index of border to display
+TEXTCONT
+TEXTEND
+STAL 30
+WM_HIGHLIGHTCLEAR1 0 1 0 //middle value is index of border to clear
+WM_HIGHLIGHTCLEAR2 0 1 0 //middle value is index of border to clear
+STAL 30
+WM_HIGHLIGHT 0 2 0 //middle value is index of border to display
+TEXTCONT
+TEXTEND
+STAL 30
+WM_HIGHLIGHTCLEAR1 0 2 0 //middle value is index of border to clear
+WM_HIGHLIGHTCLEAR2 0 2 0 //middle value is index of border to clear
+STAL 30
+WM_HIGHLIGHT 0 3 0 //middle value is index of border to display
+TEXTCONT
+TEXTEND
+STAL 30
+WM_HIGHLIGHTCLEAR1 0 3 0 //middle value is index of border to clear
+WM_HIGHLIGHTCLEAR2 0 3 0 //middle value is index of border to clear
+STAL 30
+WM_HIGHLIGHT 0 4 0 //middle value is index of border to display
+TEXTCONT
+TEXTEND
+STAL 30
+WM_HIGHLIGHTCLEAR1 0 4 0 //middle value is index of border to clear
+WM_HIGHLIGHTCLEAR2 0 4 0 //middle value is index of border to clear
+STAL 30
+WM_HIGHLIGHT 0 5 0 //middle value is index of border to display
+TEXTCONT
+TEXTEND
+STAL 30
+WM_HIGHLIGHTCLEAR1 0 5 0 //middle value is index of border to clear
+WM_HIGHLIGHTCLEAR2 0 5 0 //middle value is index of border to clear
+STAL 30
+WM_HIGHLIGHT 0 6 0 //middle value is index of border to display
+TEXTCONT
+TEXTEND
+STAL 30
+WM_HIGHLIGHTCLEAR1 0 6 0 //middle value is index of border to clear
+WM_HIGHLIGHTCLEAR2 0 6 0 //middle value is index of border to clear
+STAL 30
+TEXTCONT
+TEXTEND
+STAL 120
+ENDA
